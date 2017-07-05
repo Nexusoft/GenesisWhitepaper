@@ -9,6 +9,7 @@
 \usepackage{multirow}
 \usepackage{hyperref}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 \usepackage{array}
 \usepackage{etoolbox}
 \usepackage{yax}
@@ -119,7 +120,7 @@
 
 \title{\rmfamily\normalfont{Nexus: A Peer-to-Peer Network}}
 
-\date{\today}
+\date{July 4, 2017}
     
 \maketitle
 
@@ -150,7 +151,7 @@ Welcome to the Future.
   {kSmith, pSmith, jSmith}
 
 
-\paragraph{\textbf{White Paper} - \textit{1.0.0} }
+\paragraph{\textbf{White Paper} - \textit{1.0.1} - Revised \today  }
 
 \paragraph{}
 
@@ -315,7 +316,7 @@ SHA-256 is used in Bitcoin mining and in the creation of Bitcoin addresses \cite
 
 \subsubsection{SHA-3}
 
-Neuxs uses a newer, more secure hashing algorithm than that of Bitcoin.
+Nexus uses a newer, more secure hashing algorithm than that of Bitcoin.
 The SHA-3 \cite{sha3} standard was the result of a competition \cite{nistcompetitionend} with the goal of producing an alternative to SHA-2.
 This competition was organized by the National Institute of Standards and Technology (NIST).
 The winner of this competition was selected in 2012.
@@ -399,15 +400,15 @@ The amount of NXS deposited into each reserve is
 mathematically determined by the \textit{decay equations}.
 
 \begin{equation}\label{eq:reserves}
-\resizebox{.75\hsize}{!}{$\left\{
+\resizebox{.75\hsize}{!}{$
 \begin{array}{ll}
       V_{d} = \;\;1 \cdot e^{-0.00000059 \cdot T_{m}} & + 0.032 \\
       V_{a} = 10 \cdot e^{-0.00000055 \cdot T_{m}} & + 1 \\
       V_{m} = 50 \cdot e^{-0.0000011 \cdot T_{m}} & + 1 \\
-\end{array} \right\} $}
+\end{array} $}
 \end{equation}
 
-Where $T_m$ is the time in minutes and $V_{d}$, $V_{a}$, $V_{m}$ are the reserve deposit amounts for miner, ambassador, and developer reserves.
+\noindent Where $T_m$ is the time in minutes and $V_{d}$, $V_{a}$, $V_{m}$ are the reserve deposit amounts for miner, ambassador, and developer reserves.
 
 \pagebreak
 \subsubsection{Rewards}
@@ -417,13 +418,15 @@ This prevents surplus emission beyond the target level.
 \noindent These three equations describe the intervals in which the block reward $V_{b}$ changes
 based on reserve values $V_{m}$ at $T_{m}$ by compounding the $T_{m}$ value from equations \ref{eq:reserves}.
 
-\begin{equation}\label{eq:rewards}
-\resizebox{.75\hsize}{!}{$\left\{
-\begin{array}{ll}
-      V_{b} = \frac{T_{a}}{60} \cdot V_{r} & T_{m} \leq 2.5 Minutes \\
-      V_{b} = 2.5 \cdot V_{r} & T_{m} > 2.5 Minutes \\
-      V_{b} = 3.0 \cdot V_{r} & T_{m} \geq 20 Minutes \\
-\end{array} \right\} $}
+\begin{equation}
+\resizebox{.60\hsize}{!}{$
+    V_b= 
+\begin{cases}
+    \frac{T_{a}}{60} \cdot V_{r}, & T_{m} \leq 2.5\\
+    2.5 \cdot V_{r}, & 2.5 < T_{m} < 20\\
+    3.0 \cdot V_{r}, & T_{m} \geq 20
+\end{cases}
+$}
 \end{equation}
 
 \begin{center}
@@ -448,11 +451,9 @@ Nexus solves this problem by rewarding people with newly minted coins for holdin
 To put it simply, if someone installs the Nexus wallet on their computer and deposits enough NXS, then they will occasionally find a block and earn extra NXS.\footnote{This is a way to support the network and earn Nexus without costly and difficult-to-operate mining hardware and software.}\\
 
 \noindent This minting system operates to give people larger rewards for greater contribution to the network. 
-As one receives blocks by using this method in a timely manner, one's trust grows.
-The more trust \ref{subsection:Trust} gained in the network,
-the higher the minting rate earned.\\ 
-
-\noindent The minting rate $R_m$ ranges from 0.5 \% - 3 \%.
+As one produces blocks by using this method in a timely manner, one's trust grows.
+With a higher trust score comes a higher minting rate.
+The minting rate $R_m$ ranges from 0.5 \% - 3 \%.
 
 \paragraph{}
 \begin{equation}
@@ -473,9 +474,8 @@ The two proof-of-work channels prevent each other from producing too many blocks
 \subsubsection{Dense Prime Clusters}
 
 The work done by miners in the Prime channel is a search for dense prime clusters \cite{wikiprimecluster}.\footnote{The numbers found in these searches are actually probable primes \cite{wikiprobable}. They pass the Fermat primality test \cite{wikifermat} at base 2.}
-Dense prime clusters are prime k-tuples with the characteristic that many prime numbers are found in a small interval \cite{wolframprimecluster,primesolominer}.
 Finding these dense prime clusters is a trial-and-error process.
-Miners must try many numbers to successfully find one that is the beginning of a dense prime cluster.\\ 
+Miners must try many numbers to successfully find one that is the beginning of a dense prime cluster \cite{wolframprimecluster,primesolominer}.\\ 
 
 \noindent The count of prime numbers in a dense prime cluster is called its chain length.
 \footnote{The ``chain" here should not be confused with the chain in blockchain.}
@@ -504,12 +504,12 @@ Bitcoin uses SHA-256 while Nexus uses the newer SHA-3 in combination with Skein.
 Proof-of-Holdings \textit{(POH)} provides a third channel of security.
 An attacker would need to gain 51 percent of the NXS supply to attack this channel in conjunction with the hash and prime channels.
 The incentive for this proof system is newly minted coins which are rewarded to participants for actively ``holding" their coins. 
-This means the network incentivizes users to contribute to the security of the system. 
+This means the network incentives users to contribute to the security of the system. 
 This provides a natural growth in the coin supply over time that will be highly beneficial to the network, economy, and users.\\ 
 
 \noindent Unlike current Central Bank models, this new supply of coins goes directly into the users hands rather than being filtered through a fractional reserve system. 
 Furthermore, these newly minted coins have zero debt associated with their issuance and, therefore, never need to be paid back to the system with associated interest, as is the case with many current fiat currencies.
-The minting rate was determined to be a varibale rate between .5\% and 3\% to provide a small natural growth to the coin supply allowing for increased economic opportunity.
+The minting rate was determined to be a variable rate between .5\% and 3\% to provide a small natural growth to the coin supply allowing for increased economic opportunity.
 
 \subsection{Difficulty}
 
@@ -526,15 +526,16 @@ A weighted average time, $T_a$ is calculated as follows:\\
 \noindent $Mod_d$ is the factor used to modify the difficulty\\ 
 
 \begin{equation}
-\resizebox{.75\hsize}{!}{$\left\{
-\begin{array}{ll}
-      Mod_{d} = [1 - (Min_{d} \cdot T_{o})] \cdot T_{t} & T_{a} \geq T_{t} \\
-      Mod_{d} = [1 + (Max_{d} \cdot T_{o})] \cdot T_{t} & T_{a} \leq T_{t} \\
-\end{array} 
-\right\}$}
-\end{equation}\\ 
+\resizebox{.70\hsize}{!}{$
+    Mod_d= 
+\begin{cases}
+    [1 - (Min_{d} \cdot T_{o})] \cdot T_{t}, & \text{if } T_{a} \geq T_{t}\\
+    [1 + (Max_{d} \cdot T_{o})] \cdot T_{t}, & \text{otherwise}
+\end{cases}
+$}
+\end{equation}
 
-\noindent Where $T_t$ is the target time, $Min_d$ is the minimum difficulty decrease and $Max_d$ is the maximum difficulty increase.
+\noindent Where $T_t$ is the target time, $T_o$ is the offset time, $Min_d$ is the minimum difficulty decrease and $Max_d$ is the maximum difficulty increase.
 
 \epigraph{It's a vice to trust everyone, and equally a vice to trust no one.}{\textit{\footnotesize{Seneca}}}
 
@@ -542,7 +543,7 @@ A weighted average time, $T_a$ is calculated as follows:\\
 \subsection{Trust}\label{subsection:Trust}
 
 Trust is a core component of Nexus.
-Nodes which have a vested interest in and are acting to benefit the whole network by participating honestly and consistently are considered more trustworthy.\footnote{Not everybody has money, but everybody has time; this is how trust is created.}
+Nodes which have a vested interest in and are acting to benefit the whole network by participating honestly and consistently are considered more trustworthy.
 Currently, trust is earned by holding Nexus in a wallet and producing valid blocks on a regular basis.
 This earned trust is recorded in the Nexus blockchain and is associated with a trust key.\\ 
 
@@ -556,19 +557,18 @@ Weight governs the speed in which one can search for new trust blocks.
 It comes in the form of two different weight variables: Block Weight ($W_b$) and Trust Weight ($W_t$).
 
 \begin{equation}
-\resizebox{.95\hsize}{!}{$\left\{
-\begin{array}{ll}
-      W_{t} = \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200}) + 1}{ln(3)} + 1.0 & W_{t} \leq 17.5\\
-      W_{b} = \frac{19.0 \cdot ln(\frac{2 \cdot a_b}{86400}) + 1}{ln(3)} + 0.05 & W_{t} \leq 20.0\\
-\end{array} 
-\right\}$}
+W_{t} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200}) + 1}{ln(3)} + 1.0)
+\end{equation}
+
+\begin{equation}
+W_{b} = Min(20.0,\frac{19.0 \cdot ln(\frac{2 \cdot a_b}{86400}) + 1}{ln(3)} + 0.05)
 \end{equation}
 
 \noindent Where $a_t$ is the trust age and $a_b$ is the block age.
 
 \subsubsection{Threshold}
 
-In order to prove one's contribution time, a system has been developed to allow an energy-efficient time-based trust system.
+A system has been developed to allow an energy-efficient time-based trust system.
 This is regulated by the Energy Efficiency Threshold $E_t$.
 
 \begin{equation}
@@ -593,11 +593,9 @@ The hash of this genesis transaction can therefore be used as an input in future
 \noindent The following equation describes the genesis weight required to get a high enough threshold to achieve the creation of a genesis transaction and corresponding block\footnote{Genesis transaction weight does not include block weight.}
 
 \begin{equation}
-\resizebox{.85\hsize}{!}{$\left\{
-\begin{array}{ll}
-      W_{g} = \frac{16.5 \cdot ln(\frac{2 \cdot a_{c}}{7257600}) + 1}{ln(3)} + 1.0 & W_{t} \leq 17.5\\
-\end{array} 
-\right\}$}
+\resizebox{.70\hsize}{!}{$
+W_{g} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_{c}}{7257600}) + 1}{ln(3)} + 1.0)
+$}
 \end{equation}
 
 \noindent Where $a_c$ is the coin age of the coins which are being used.
@@ -609,7 +607,6 @@ Trust blocks cannot be created from the same trust key unless the interval or nu
 \subsection{Clock Drift}
 
 Clock drift refers to several related phenomena where a clock does not run at exactly the same rate as a reference clock \cite{wikiclockdrift}.
-These minor modulations have an effect on the value of one second unit time, which can cause inconsistent times on differing machines.
 This is usually resolved by connecting to a central server and/or atomic clock.
 Nexus combats this with a peer-to-peer time-keeping system that keeps all clocks on the network synchronized to the unified time seed.
 
