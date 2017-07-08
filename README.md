@@ -2,7 +2,7 @@
 
 
 This paper is deisgned to help anyone understand what nexus is from the highest level summary possible. 
-This is to introduce the series of white papers that will be expanding most of the sections herin into their own individual papers.
+This is to introduce the series of white papers that will be expanding most of the sections herein into their own individual papers.
 The reason for doing this is to make Nexus a more digestable concept by breaking it up into smaller pieces rather then a giant master paper.
 
 
