@@ -24,7 +24,7 @@
 \setparameter Gmyrek:
  firstname   = Bryan
  lastname    = "Gmyrek Ph.D."
- title       = {Core Developer}
+ title       = {Developer}
  email       = {\href{mailto:bryan@nexus.io}{bryan@nexus.io}}
  
 \setparameter Reeg:
@@ -151,7 +151,7 @@ Welcome to the Future.
   {kSmith, pSmith, jSmith}
 
 
-\paragraph{\textbf{\textit{Genesis} White Paper} - \textit{1.0.2} - Last Revised \today  }
+\paragraph{\textbf{\textit{Genesis} White Paper} - \textit{1.0.3} - Last Revised \today  }
 
 \paragraph{}
 
@@ -172,7 +172,7 @@ Peer-to-peer networks are forming the foundations of digital industries worldwid
 This ecosystem continues to evolve as innovators advance the growing body of open-source protocols, including \textit{Bitcoin, BitTorrent, TOR, and IPFS}.
 The utility of these networks has increasingly affected people throughout the world.
 For the first time in history, the transmission of value can occur without the need for intermediaries.
-Now, almost ten years from the release of Satshosi Nakamoto's \textit{Bitcoin: A Peer-to-Peer Electronic Cash System} \cite{bitcoin} debuted on a Cypher Punk e-mail list in a time of economic crisis, many benefits have been realized including but not limited to: \textbf{\textit{viz.}} enhanced financial security, emancipation from centralized banking systems, and the possibilities of future applications of blockchains. However, many challenges have also been identified such as scaling, consensus updates, and considerations for the post-quantum era that is almost upon us.
+Now, almost ten years from the release of Satoshi Nakamoto's \textit{Bitcoin: A Peer-to-Peer Electronic Cash System} \cite{bitcoin} debuted on a Cypher Punk e-mail list in a time of economic crisis, many benefits have been realized including but not limited to: \textbf{\textit{viz.}} enhanced financial security, emancipation from centralized banking systems, and the possibilities of future applications of blockchains. However, many challenges have also been identified such as scaling, consensus updates, and considerations for the post-quantum era that is almost upon us.
 By resolving some of these identified issues, Nexus has enhanced the blockchain protocol, thereby providing a solid foundation for the digital economies of the future. 
 \bigskip
 
@@ -184,7 +184,7 @@ Nexus is a connection, or series of connections, of computers, businesses, and p
 A blockchain is a decentralized and immutable public database of transactions. 
 The database is organized by connecting a chain of blocks together.
 Each block contains a group of transactions.
-The blocks are ordered in time and "chained" together using cryptographic hashes.\footnote{"A cryptographic hash function is a hash function which takes an input (or 'message') and returns a fixed-size alphanumeric string. The string is called the 'hash value'..." \cite{wikihash}}\footnote{The concept of a cryptographic chain of blocks dates back to Ehrsam, Meyer, Smith and Tuchman's invention of Cipher Block Chaining (CBC) in 1976 \cite{cbc}. NB: this is distinct from \textit{blockchain} as discussed here in many ways, notably because it does not include a proof-of-work.}
+The blocks are ordered in time and linked together using cryptographic hashes.\footnote{"A cryptographic hash function is a hash function which takes an input (or 'message') and returns a fixed-size alphanumeric string. The string is called the 'hash value'..." \cite{wikihash}}\footnote{The concept of a cryptographic chain of blocks dates back to Ehrsam, Meyer, Smith and Tuchman's invention of Cipher Block Chaining (CBC) in 1976 \cite{cbc}. NB: this is distinct from \textit{blockchain} as discussed here in many ways, notably because it does not include a proof-of-work.}
 Large quantities of computational resources must be expended to create each block hash,\footnote{This is generically called Proof-of-Work but also includes Sunny King's innovation: Proof-of-Stake \cite{peercoin}.} and each block contains the previous block's hash: \textit{this is how they are chained}.
 
 \begin{center}
@@ -287,8 +287,8 @@ They exchange data in the form of transactions and secure them into a distribute
 \item \textbf{Wallet}
 
 A command line and graphical Qt version of the Nexus wallet is currently available for download \cite{githubnexusreleases} \cite{nexusearth}.
-A new version of the Nexus wallet will be a higher-level graphical application written in the Electron Framework.
-This will allow access to the functions of the \textit{``Nexus Daemon"} through a HTML/JS interface with native Windows, Linux, and Mac OS X installers.\footnote{This is under active development at the time of this writing.}
+A new version of the Nexus wallet will be a higher-level graphical application that allows access to the functions of the \textit{``Nexus Daemon"} through a HTML/JS interface. 
+The interface also acts as a modular framework in which modules can be developed and sold for a greater user experience.\footnote{This is under active development at the time of this writing.}
 
 \item \textbf{Library}
 
@@ -612,8 +612,7 @@ Nexus combats this with a peer-to-peer time-keeping system that keeps all clocks
 
 \subsection{Security}
 
-When the clocks are synchronized, a higher level of security occurs with regards to the timestamps. 
-This is because Bitcoin and other cryptocurrencies generally allow up to 2 hours in the future for clock drift, which means that blocks can be created up to 2 hours from the \textit{timestamp}, thereby leaving potential attack vectors.
+Bitcoin and other cryptocurrencies allow up to 2 hours in the future for clock drift, which means that blocks can be created up to 2 hours from the current network \textit{timestamp}, thereby leaving potential attack vectors.
 Nexus combats this synchronization not with median time, as Bitcoin uses, but rather with a Unified Time system that operates on the protocol level keeping all Nexus clocks synchronized to the second.
 
 \subsection{Time-Locks}
@@ -751,49 +750,36 @@ Vt5TNT9himnCMmnbjbCPxgxhSTDE5iAzCZ3LhJFm7L9rCFroYoqz
 
 \subsection{Public Keys}
 
-The public key is derived from the private key using elliptic curve cryptography.
 It's easy to derive a public key from a private key, but not a private key from a public key.
-However, there is concern that, in the future, this may be possible with quantum computers.
-Fortunately, modern cryptocurrencies, including Nexus and Bitcoin, do not require users to share even their public key.
-When you request a payment in Nexus from someone, you first get a \textit{Nexus address} from your wallet.
-This address is not your public key.
-It's called a public key hash, or \textit{PKH}.
-As the name implies, it's created by taking a hash of the public key.
+When you request a payment from someone, you first get a \textit{Nexus address} from your wallet.
+This address is not your public key, it is called a public key hash, or \textit{PKH}.
+As the name implies, it's created by hashing your public key and converting it into Base58 encoding.
 This means that an attacker who wants to figure out your private key first has to determine your public key from the \textit{PKH}.
-Fortunately, this is an intractable problem. Current research indicates this may take even quantum computers on the order of a hundred billion years \cite{registersha3,cryptosha3}.
+Fortunately, this is an intractable problem. Current research indicates this may take even quantum computers on the order of a hundred billion years \cite{registersha3,cryptosha3} to reveal the public key.
 The public key associated with a \textit{PKH} is not revealed until the coins are spent \cite{bitcorepkh}.
 Therefore, one can achieve a high level of quantum attack resistance simply by not re-using addresses.\\
 
-\noindent Now let's consider the question: If an adversary did know your public key, how hard would it be for them to determine the all-important private key? For the answer to this question, we look to the work of Peter Shor.
-
 \subsection{Shor's Algorithm}
 
-\noindent In 1994, Peter Shor devised a method which could be used to solve the Integer Factorization Problem \textit{IFP} and the Discrete Logarithm Problem \textit{DLP} in polynomial time on a quantum computer \cite{shorarxiv}.
+\noindent In 1994, Peter Shor created a method which could be used to solve the Integer Factorization Problem \textit{IFP} and the Discrete Logarithm Problem \textit{DLP} in polynomial time on a quantum computer \cite{shorarxiv}.
 This was an important achievement because these problems have no classical polynomial time solution.
 This means that, on a classical computer, they can't be solved in any amount of time which can be represented by $n^k$ - for example $n^2$, $n^3$, etc.\footnote{In layman's terms, this means that finding a solution is infeasible as long as a large enough number is used.}\\ 
 
-\noindent Because of this, they are used in cryptographic systems.\\ 
-
 \noindent The Elliptic Curve Discrete Logarithm Problem \textit{(ECDLP)} is a special case of the \textit{DLP} for elliptic curves.
-This is a more difficult problem to solve classically than the \textit{DLP}.\cite{prooszalka} % Section 2.1.2
-This is the type of problem that needs to be solved in order to determine the private key from the public key for cryptocurrencies, such as Bitcoin and Nexus.
-
-\subsection{Zalka, Proos and Kaye}
-
-Christof Zalka, along with John Proos and Phillip Kaye, have extended Shor's work by designing algorithms optimized for solving the \textit{ECDLP}.
-The result is the Proos-Zalka and Kaye-Zalka algorithms.
+This is a more difficult problem to solve classically than conventional cyrptography relying on the \textit{DLP} alone.\cite{prooszalka} % Section 2.1.2
+This is the type of problem that needs to be solved in order to determine the private key from the public key for cryptocurrencies, such as Bitcoin and Nexus.\\
 
 \subsection{Proos-Zalka Algorithm}
 
 The Proos-Zalka algorithm was specifically designed to solve the \textit{ECDLP} over a prime field $\mathbb{F}_p$ on a quantum computer.
-This is an attack on elliptic curves over a finite field. The qubit requirement for the breaking of the ECDLP over a prime field of $n$ bits is as follows \cite{prooszalka}
+The qubit requirement for the breaking of the ECDLP over a prime field of $n$ bits is as follows \cite{prooszalka}
 
 \begin{equation}
 \resizebox{.5\hsize}{!}{$5\cdot n + 8 \sqrt{n} + 4 \log_{2} n + 10 \approx 6n$}
 \end{equation}
 
 \subsection{Kaye-Zalka Algorithm}
-The Kaye-Zalka revision addresses curves over the binary field $\mathbb{F}_{2^m}$. This specific field takes advantage of binary computation to bring quicker verification on larger keys. The equation modeling the qubits required to break a key of $\mathbb{F}_{2^m}$ is as follows \cite{kayezalka}
+The Kaye-Zalka revision addresses curves over the binary field $\mathbb{F}_{2^m}$. This specific field takes advantage of binary computation to bring quicker verification on larger keys. The equation modeling the qubits required to break a key of $\mathbb{F}_{2^m}$ is as follows \cite{kayezalka}.
 
 \begin{equation}
 \resizebox{.5\hsize}{!}{$2 m + 7\cdot log m + 7 + H \approx 2m$}
@@ -810,7 +796,7 @@ since the security of all algorithms can be violated by brute force attacks \cit
 Bitcoin keys are $256-224 = 32$ bits longer than this requirement while Nexus keys are $571-224 = 347$ bits longer.
 \noindent According to the National Security Agency 
 ``Elliptic Curve Public Key Cryptography using the 256-bit prime modulus elliptic curve as specified in FIPS-186-2 and SHA-256 are appropriate for protecting classified information up to the SECRET level. 
-Use of the 384-bit prime modulus elliptic curve and SHA-384 are necessary for the protection of TOP SECRET information \cite{nsa384}."
+Use of the 384-bit prime modulus elliptic curve and SHA-384 are necessary for the protection of ``top secret'' information \cite{nsa384}."
 
 \subsubsection*{Brute Force Resistance}
 
@@ -874,18 +860,22 @@ This is the focus of ongoing research and development in Nexus.
 \subsection{Key Accommodations in Nexus} 
 
 Nexus currently supports key sizes as large as 571 bits, specifically sect571r1.
-In order to offer more choice and to take advantage of the larger number of qbits required to crack curves over prime fields, we will also implement keys using different curves.\\
+In order to offer more choice and to take advantage of the larger number of qubits required to crack curves over prime fields, we will also implement keys using different curves.\\
 
 \noindent The choice of elliptic curve parameters is subtle; care must be taken to avoid security pitfalls.
-Several parameter choices have been developed, as described on the SafeCurves website \cite{safecurves}.
-We plan to add support for multiple curves to Nexus in the future, giving people the choice of what curve to use and the ability to use multisig with multiple curves.
+We plan to add support for multiple curves including post quantum solutions being developed at the current time.
+To mitigate against quantum attack at this time, signature chains are being developed as a part of the Tritium protocol taking advantage of \textit{PKH} and \textit{OTS} or one-time signatures, which preventing side channel attacks to make quantum attacks exlusive to Grover's Algorithm.
+The projected time before any practical quantum computers that could do any damage is around five to ten years.
+By doubling Nexus key size, the required run time is quadrupled; this provides more time to carefully choose a post quantum cryptographic method. 
+This is projected to be within the next few years as the development of post-quantum cryptography is observed and studied more thoroughly.
 
 \subsection{Post-Quantum Cryptography}
 
-Since the newly emerging quantum computer era is almost upon us, and many cryptographers are working on new quantum encryption methods, Nexus has chosen to use key suites and high-bit keys to provide quantum resistance while the post-quantum industry matures. 
-The projected time before any practical quantum computers that could do any damage is around five to ten years. 
-By doubling Nexus key size, the required run time is quadrupled; this provides more time to carefully choose a post quantum cryptographic method. 
-This is projected to be within the next few years as the development of post-quantum cryptography is observed and studied more thoroughly.
+There are many promising solutions to the post-quantum conundrum that we are facing in the coming 5 years. 
+One of which holds promise is lattice based cryptography which ensures that quantum attack, at least for now, is infeasible. 
+Another viable solution to such attacks is using hash based signatures such as \textit{XMSS} which does hold certain characteristics of post-quantum solutions, but it does carry a heavy drawback of requiring very large amounts of data to be transfered in order to protect the private key from being leaked. 
+This is not desirable when selecting a DSA \textit{Digital Signature Algorithm} for a blockchain, as there are already very high data overheads that haven't been addressed in scaling solutions.
+NIST just opened a new competition for Post-Quantum standardization similar to the SHA3 competition that should be finalized in the next few years to give us a better selection of post quantum algorithms. \cite{NIST_POST_QUANTUM} 
 
 \section{Conclusion}
 
@@ -965,7 +955,7 @@ The golden mean is described as the quality of having neither excess or deficien
     \centering
     \includegraphics[width=0.44\textwidth]{kant.jpg}
 \end{wrapfigure}
-%%Preston - Colin fix text wrap in ths section
+
 Immanuel Kant was born ahead of his time on the 22nd of April, 1724 in Berlin, Germany \cite{kant}. He had many philosophies that are still studied to this day. 
 One of his more notable works was called the \textit{Kingdom of Ends}. 
 He describes a hypothetical existence where individuals act entirely rationally, and with reason.
@@ -1017,7 +1007,7 @@ At their most mysterious and profound point lies the \textit{"Gate of the Great 
 
 Principles are the extensions of philosophies that derive frameworks of thought and act as guidelines of proper conduct between ourselves and others.
 
-\subsubsection{Individual}
+\subsection{Individual}
 
 \begin{enumerate}
 \item \textbf{Evaluate} as a means to greater \textbf{Knowledge}
@@ -1026,7 +1016,7 @@ Principles are the extensions of philosophies that derive frameworks of thought 
 \item \textbf{Freedom} as the truest \textbf{Expression}
 \end{enumerate}
 
-\subsubsection{Collective}
+\subsection{Collective}
 
 \begin{enumerate}
 \item \textbf{Objective} with Receptivity, \textbf{Honest} with Communication
@@ -1133,6 +1123,10 @@ SEC 2: Recommended Elliptic Curve Domain Parameters, Daniel R. L. Brown (dbrown@
 \bibitem{secp256k1}
 secp256k1. Bitcoin Wiki.
 \url{https://en.bitcoin.it/wiki/Secp256k1}
+
+\bibitem{NIST_POST_QUANTUM}
+Submission Requirements for Post Quantum Cryptography
+\url{https://csrc.nist.gov/csrc/media/projects/post-quantum-cryptography/documents/call-for-proposals-final-dec-2016.pdf}
  
 \bibitem{sha256bitcoin} 
 Block hashing algorithm, Bitcoin Wiki \url{https://en.bitcoin.it/wiki/Block_hashing_algorithm}
@@ -1266,10 +1260,6 @@ J. Proos, C. Zalka, Shor's discrete logarithm quantum algorithm for elliptic cur
 \bibitem{kayezalka}
 Optimized quantum implementation of elliptic curve arithmetic over binary fields. Phillip Kaye, Christof Zalka. 2004.
 \url{https://arxiv.org/abs/quant-ph/0407095}
-
-\bibitem{safecurves}
-Daniel J. Bernstein and Tanja Lange. SafeCurves: choosing safe curves for elliptic-curve cryptography.
-\url{https://safecurves.cr.yp.to/}
 
 \bibitem{registersha3}
 SHA3-256 is quantum-proof, should last BEELLIONS of years, say boffins. The Register.
