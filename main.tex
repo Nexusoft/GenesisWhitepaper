@@ -646,15 +646,14 @@ The summary in Grover's 1996 paper provides a helpful description:
 "Imagine a phone directory containing N names arranged in completely random order. 
 In order to find someone's phone number with a probability of one half, 
 any classical algorithm... will need to look at a minimum of $N/2$ names. 
-Quantum mechanical systems can be in a superposition of states and 
-simultaneously examine multiple names ... 
+Qubits can be in a superposition of states, which means that a qubit can be either a 0 or a 1.
 As a result, the desired phone number can be obtained in only $O(\sqrt{N})$ steps \cite{lovgrover}."\\ 
 
 \noindent Given the output of a black box function, it can be used to determine\footnote{In a probabilistic manner.} the input.
 This implies that most one-way cryptographic hash functions are susceptible to this algorithm.
 Indeed, Grover's algorithm could brute-force a 256-bit key in roughly $2^{128}$ iterations.\\ 
 
-\noindent The algorithm proceeds to call $G$ $[\frac{\pi}{4} \cdot 2^{\frac{k}{2}}]$ times in the verification of the subroutines. The largest overhead, though, in Grover's Algorithm is the cost of error detection that must be done classically to ensure the accuracy of the qubits and the two subroutines of Grover Iteration.\\
+\noindent The algorithm proceeds to call $G$ $[\frac{\pi}{4} \cdot 2^{\frac{k}{2}}]$ times in the verification of the subroutines. The largest overhead, though, in Grover's Algorithm is the cost of error detection that must be done classically to ensure the accuracy of the qubits (overcoming quantum noise), and the two subroutines of Grover Iteration.\\
 
 
 \begin{table}[ht]
@@ -761,12 +760,12 @@ Therefore, one can achieve a high level of quantum attack resistance simply by n
 
 \subsection{Shor's Algorithm}
 
-\noindent In 1994, Peter Shor created a method which could be used to solve the Integer Factorization Problem \textit{IFP} and the Discrete Logarithm Problem \textit{DLP} in polynomial time on a quantum computer \cite{shorarxiv}.
+\noindent In 1994, Peter Shor created an algorithm which could be used to solve the Integer Factorization Problem \textit{IFP} and the Discrete Logarithm Problem \textit{DLP} in polynomial time on a quantum computer \cite{shorarxiv}.
 This was an important achievement because these problems have no classical polynomial time solution.
 This means that, on a classical computer, they can't be solved in any amount of time which can be represented by $n^k$ - for example $n^2$, $n^3$, etc.\footnote{In layman's terms, this means that finding a solution is infeasible as long as a large enough number is used.}\\ 
 
 \noindent The Elliptic Curve Discrete Logarithm Problem \textit{(ECDLP)} is a special case of the \textit{DLP} for elliptic curves.
-This is a more difficult problem to solve classically than conventional cyrptography relying on the \textit{DLP} alone.\cite{prooszalka} % Section 2.1.2
+This is a more difficult problem to solve classically than conventional cryptography relying on the \textit{DLP} alone.\cite{prooszalka} % Section 2.1.2
 This is the type of problem that needs to be solved in order to determine the private key from the public key for cryptocurrencies, such as Bitcoin and Nexus.\\
 
 \subsection{Proos-Zalka Algorithm}
@@ -789,20 +788,19 @@ The Kaye-Zalka revision addresses curves over the binary field $\mathbb{F}_{2^m}
 
 \subsection{The Benefits of Larger Keys}
 
-"Key length defines the upper-bound on an algorithm's security 
-since the security of all algorithms can be violated by brute force attacks \cite{wikikeysize}." \\ 
+"Key length defines the upper-bound on an algorithm's security since the security of all algorithms can be violated by brute force attacks \cite{wikikeysize}." \\ 
 
 \noindent As of 2015, a minimum key length of 224 bits is recommended for elliptic curve algorithms \cite{bruteforce}.
 Bitcoin keys are $256-224 = 32$ bits longer than this requirement while Nexus keys are $571-224 = 347$ bits longer.
 \noindent According to the National Security Agency 
-``Elliptic Curve Public Key Cryptography using the 256-bit prime modulus elliptic curve as specified in FIPS-186-2 and SHA-256 are appropriate for protecting classified information up to the SECRET level. 
+``Elliptic Curve Public Key Cryptography using the 256-bit prime modulus elliptic curve as specified in FIPS-186-2 and SHA-256 are appropriate for protecting classified information up to the ``secret'' level. 
 Use of the 384-bit prime modulus elliptic curve and SHA-384 are necessary for the protection of ``top secret'' information \cite{nsa384}."
 
 \subsubsection*{Brute Force Resistance}
 
 The Large Bitcoin Collider \cite{largebitcoin} is a project that attempts to brute force-attack Bitcoin.
 Participants in this project generate as many Bitcoin public addresses as possible by first choosing a random number in a given range.
-Rarely, they happen to generate a public address that happens to contain Bitcoins and the Bitcoins can be stolen since they know what the private key is.\footnote{There are a couple of ways to mitigate the risk of such an attack on your Bitcoins. First, don't keep too many coins in one address. Second, use multisig.}\\ 
+Rarely do they find a public address that contains Bitcoin, but on chance one is discovered the Bitcoin contained in it can be stolen.\footnote{There are a couple of ways to mitigate the risk of such an attack on your Bitcoins. First, don't keep too many coins in one address. Second, use multisig.}\\
 
 \noindent Key length defines the upper-bound on an algorithm's security \cite{wikikeysize} against brute-force attacks.
 Nexus uses significantly larger 571-bit keys than Bitcoin's 256-bit keys and is thus postulated to be more resistant to these attacks.\\ 
@@ -810,12 +808,12 @@ Nexus uses significantly larger 571-bit keys than Bitcoin's 256-bit keys and is 
 \noindent In any case, Rico - the pseudonymous lead of the LBC states: "Finding a P2PKH\footnote{Pay to Public Key Hash\cite{p2pkh}}-collision [one cryptographic method of creating Bitcoin addresses] would probably mean the end of P2PKH but not Bitcoin," ... "Bitcoin would evolve with new address types. Most certainly it wouldn't 'die' because of this."\cite{largebitcoin}
 This highlights one of the ways that Nexus is providing value back to the Bitcoin ecosystem.
 By using different elliptic curve parameters and different hashing algorithms, Nexus is paving the way for possible future enhancements to Bitcoin.
-Instead of merely researching or discussing alternatives, Nexus is proving them on a live blockchain.
+Instead of merely researching or discussing alternatives, Nexus has been proving them on a live blockchain.
 
 \subsubsection*{Longer Solution Time}
 
 It will take more time for a quantum computer to solve the \textit{ECDLP} if the key is larger.
-The run times are predicted to be of order $O(n^2)$ \cite{prooszalka,kayezalka}.
+The run times are predicted to be of order $O(n^2)$ to $O(n^3)$ \cite{prooszalka,kayezalka}.
 This means that a key which is twice as long will take approximately four times as long to find with a quantum computer.
 
 \begin{table}[ht]
@@ -864,14 +862,14 @@ In order to offer more choice and to take advantage of the larger number of qubi
 
 \noindent The choice of elliptic curve parameters is subtle; care must be taken to avoid security pitfalls.
 We plan to add support for multiple curves including post quantum solutions being developed at the current time.
-To mitigate against quantum attack at this time, signature chains are being developed as a part of the Tritium protocol taking advantage of \textit{PKH} and \textit{OTS} or one-time signatures, which preventing side channel attacks to make quantum attacks exlusive to Grover's Algorithm.
-The projected time before any practical quantum computers that could do any damage is around five to ten years.
-By doubling Nexus key size, the required run time is quadrupled; this provides more time to carefully choose a post quantum cryptographic method. 
+To mitigate against quantum attack, signature chains will be included as a part of the Tritium protocol taking advantage of \textit{PKH} and \textit{OTS} or one-time signatures, which happen to prevent side channel attacks and make quantum attacks exclusive to Grover's Algorithm.
+The projected time before quantum computers reach dangerous levels is the around five to ten years.
+By doubling Nexus key sizes, the required run time is quadrupled; this provides more time to carefully choose a post quantum cryptographic method. 
 This is projected to be within the next few years as the development of post-quantum cryptography is observed and studied more thoroughly.
 
 \subsection{Post-Quantum Cryptography}
 
-There are many promising solutions to the post-quantum conundrum that we are facing in the coming 5 years. 
+There are many promising solutions to the post-quantum conundrum that we are facing in the coming years. 
 One of which holds promise is lattice based cryptography which ensures that quantum attack, at least for now, is infeasible. 
 Another viable solution to such attacks is using hash based signatures such as \textit{XMSS} which does hold certain characteristics of post-quantum solutions, but it does carry a heavy drawback of requiring very large amounts of data to be transfered in order to protect the private key from being leaked. 
 This is not desirable when selecting a DSA \textit{Digital Signature Algorithm} for a blockchain, as there are already very high data overheads that haven't been addressed in scaling solutions.
@@ -882,11 +880,11 @@ NIST just opened a new competition for Post-Quantum standardization similar to t
 With modern hashing, upgraded private keys, multiple block validation methods, decentralized checkpoints, time synchronization, decentralized trust, variable block reward, time locked emission, decentralized minting, lower level library, quantum considerations, ground based mesh networks, and low earth orbit satellite constellation; Nexus is one of the most technologically advanced frameworks on the planet. 
 We now have an opportunity to step away from existing systems by simply changing our focus. 
 We can choose to look away from the systems of the past and focus our thoughts on the systems of the future. 
-Nexus exists as a publicly available, free-to-use, peer-to-peer network for people to connect and improve the efficiency and quality of their lives.  
+Nexus exists as a publicly available, free-to-use, peer-to-peer network for people to connect and improve the quality of their lives.  
 Peer-to-Peer technologies have the capability to help us reshape our world and Nexus represents an important step forward in this process. 
 The noun ``nexus'' is defined as: a connection or series of connections linking two or more things. 
 Nexus is an idea of connection and the technology to make this possible.
-It is through this connection that people will create a future for themselves filled with life, liberty and the pursuit of happiness.
+It is through this connection that we can create a future filled with life, liberty and the pursuit of happiness.
 Welcome to Nexus.
 \pagebreak
 
@@ -897,7 +895,6 @@ Welcome to Nexus.
 This appendix is designed to be seen ``as an extension to the core content'' as references to the ideas described herein.
 With the understanding and study of the following sections, one can gain a higher level perspective of what needs to be understood for us to progress as a species.
 As we can see, societal organization models, ancient philosophies that have stood the test of time, and preliminary principles designed to be references to greater understanding of truth are described below.
-If we neglect some of these ideas, the formulation of the rest of the content will suffer lack of understanding and therefore reduce the capacity of the ideals of Nexus; which is simply an idea of connection between areas of knowledge, people, computers, and business.
 
 \epigraph{Action without Vision is a Daydream, Vision without Action is a Nightmare.}
 
