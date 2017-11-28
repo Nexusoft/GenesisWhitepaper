@@ -29,6 +29,7 @@
 *-blx.aux
 *-blx.bib
 *.run.xml
+*.DS_Store
 
 ## Build tool auxiliary files:
 *.fdb_latexmk
