@@ -14,6 +14,9 @@
 \usepackage{etoolbox}
 \usepackage{yax}
 \usepackage{hyperref}
+\usepackage{dutch}
+\selectlanguage{dutch}
+
 
 \setparameter Cantrell:
  firstname   = Colin
@@ -57,9 +60,15 @@
  title       = {Editor}
  email       = {\href{mailto:maramichael@q.com}{maramichael@q.com}}
  
+ \setparameter gBogaerts:
+ firstname   = Glenn
+ lastname    = Bogaerts
+ title       = {Vertaler}
+ email       = {\href{mailto:glenn@bossit.be}{glenn@bossit.be}}
+ 
  \setparameter Nexus:
- firstname   = {Written by some of us,}
- lastname    = {Given as all of us}
+ firstname   = {Geschreven door sommigen van ons,}
+ lastname    = {Gegeven door ons allemaal}
  title       = {The Nexus Community}
  email       = {\href{mailto:team@nexus.io}{team@nexus.io}}
  
@@ -82,7 +91,7 @@
   
   \vspace*{2\baselineskip}
   
-  \textbf{Written by:}\par
+  \textbf{Geschreven door:}\par
   \medskip
   Colin Cantrell\par
   Bryan Gmyrek, Ph.D.\par
@@ -90,7 +99,7 @@
 
   \vspace*{2\baselineskip}
 
-  \textbf{with contributions by:}\par
+  \textbf{Met bijdragen van:}\par
   \medskip
   \renewcommand\do[1]{%
     {
@@ -100,9 +109,15 @@
   
   \vspace*{2\baselineskip}
   
-  \textbf{Edited by:}\par
+  \textbf{Aangepast door:}\par
   \medskip
   Mara Michael
+  
+  \vspace*{2\baselineskip}
+
+  \textbf{Vertaald door:}\par
+  \medskip
+  Glenn Bogaerts
   
   \vspace{30pt}
   \hspace{15pt}
@@ -118,28 +133,28 @@
 
 \begin{document}
 
-\title{\rmfamily\normalfont{Nexus: A Peer-to-Peer Network}}
+\title{\rmfamily\normalfont{Nexus: Een Peer-to-Peer Netwerk}}
 
-\date{July 4, 2017}
+\date{4 juli 2017}
     
 \maketitle
 
 \begin{abstract}
 
-\noindent{\textit{``You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete"}}
+\noindent{\textit{``Je verandert nooit dingen door de bestaande realiteit te bestrijden. Om iets te veranderen bouw je een nieuw model dat het bestaande model overbodig maakt"}}
 
 \begin{center}
 R. Buckminster Fuller
 \end{center}
 \bigskip
 
-\noindent{Throughout history we have witnessed many changes in our culture, technology, and governance.}
-These changes are fueled by a necessity for the further evolution of mankind.
-Now humanity approaches another one of these times in history, where the way everything has been done must be changed; this is why we built Nexus.
-Peer-to-Peer technology fuels the backbone of a global blockchain-based cryptocurrency represented by the ticker: \textit{NXS} which is traded world-wide as an alternative currency with the capacity to rival world economies.
-The framework, Nexus, utilizes new distributed database designs, mathematical trust, community governance, ground-based mesh networks, and a \textit{Low Earth Orbit} Satellite Constellation.
-We are Nexus, a connection of people, ideas, and computers providing greater choice and therefore greater evolution with an aim towards our freedom.
-Welcome to the Future.
+\noindent{Door de geschiedenis heen zijn we getuige geweest van veel veranderingen in onze cultuur, technologie en bestuur.}
+Deze veranderingen worden gevoed door de noodzaak voor de verdere evolutie van de mensheid. Nu benadert de mensheid een nieuw cruciaal punt waarin we de manier van werken volledig moeten veranderen; daarom hebben we Nexus gebouwd. Peer-to-Peer-technologie is de ruggengraat van een wereldwijde op blockchain gebaseerde cryptocurrency vertegenwoordigd door de ticker: \textit{NXS} die wereldwijd wordt verhandeld als alternatieve valuta met het vermogen om te concurreren met wereldeconomieën. Het framework Nexus maakt gebruik van een nieuw gedistribueerd database ontwerp, wiskundige algoritmes,
+gemeenschap beheer, op de grond gebaseerde mesh-netwerken en een \textit{Low Earth Orbit} satelliet netwerk. 
+Wij zijn Nexus, een connectie van mensen,
+ideeën en computers met als doel meer vrijheid te bieden. 
+Welkom in de toekomst.
+
    
 \end{abstract}
 
@@ -151,7 +166,7 @@ Welcome to the Future.
   {kSmith, pSmith, jSmith}
 
 
-\paragraph{\textbf{\textit{Genesis} White Paper} - \textit{1.0.4} - Last Revised \today  }
+\paragraph{\textbf{\textit{Genesis} White Paper} - \textit{1.0.4} - Laatste Revisie 28 november 2017  }
 
 \paragraph{}
 
@@ -164,53 +179,42 @@ Welcome to the Future.
     \includegraphics[width=0.30\textwidth]{./images/IMG_1228.JPG}
 \end{wrapfigure}
 
-\epigraph{nexus: a connection or series of connections linking two or more things.}{\textit{\footnotesize{Oxford English Dictionary}}}
+\epigraph{nexus: een verbinding of reeks van verbindingen die twee of meer dingen met elkaar verbinden.}{\textit{\footnotesize{Oxford Engels woordenboek}}}
 
-\section{Introduction}
+\section{Inleiding}
 
-Peer-to-peer networks are forming the foundations of digital industries worldwide.
-This ecosystem continues to evolve as innovators advance the growing body of open-source protocols, including \textit{Bitcoin, BitTorrent, TOR, and IPFS}.
-The utility of these networks has increasingly affected people throughout the world.
-For the first time in history, the transmission of value can occur without the need for intermediaries.
-Now, almost ten years from the release of Satoshi Nakamoto's \textit{Bitcoin: A Peer-to-Peer Electronic Cash System} \cite{bitcoin} debuted on a Cypher Punk e-mail list in a time of economic crisis, many benefits have been realized including but not limited to: \textbf{\textit{viz.}} enhanced financial security, emancipation from centralized banking systems, and the possibilities of future applications of blockchains. However, many challenges have also been identified such as scaling, consensus updates, and considerations for the post-quantum era that is almost upon us.
-By resolving some of these identified issues, Nexus has enhanced the blockchain protocol, thereby providing a solid foundation for the digital economies of the future. 
+Peer-to-peer netwerken vormen de basis van digitale industrieën in de wereld. Dit ecosysteem blijft evolueren door innovators in de sector van open-source protocollen, zoals \textit{Bitcoin, BitTorrent, TOR, and IPFS}.
+Het nut van deze netwerken heeft een steeds groter effect op mensen over de gehele wereld. Voor de eerste keer in de geschiedenis kan de overdracht van waarde plaats vinden zonder de noodzaak van tussenpersonen.
+Nu, bijna tien jaar na de release van Satoshi Nakamoto's \textit{Bitcoin: een peer-to-peer elektronische valuta systeem} \cite{bitcoin} dat debuteerde op een Cypher Punk e-maillijst in een tijd van economische crisis, er veel voordelen zijn gerealiseerd, waaronder maar niet beperkt tot: \textbf{\textit{viz.}} verbeterde financiële zekerheid, emancipatie van gecentraliseerde banksystemen, en de mogelijkheden voor nieuwe toepassingen op blockchains. Er zijn echter vele uitdagingen geïdentificeerd zoals schaalbaarheid, consensus updates en overwegingen voor het post-quantum tijdperk dat zeer dichtbij is. Door oplossingen te bieden aan een ​​aantal van deze geïdentificeerde problemen heeft Nexus de blockchain protocol verbeterd, waardoor een solide basis wordt gelegd voor de digitale economie van de toekomst. 
 \bigskip
 
-\subsection{What is Nexus?}
-Nexus is a connection, or series of connections, of computers, businesses, and people with a focus on establishing new applications of finance, technology, service, and sovereignty.  
+\subsection{Wat is Nexus?}
+Nexus is een verbinding, of reeks van verbindingen van computers, bedrijven en mensen die de focus leggen op het opzetten van nieuwe financiële toepassingen, technologieën, dienstverlening en soevereiniteit.  
 
-\subsection{What is a Blockchain?}
+\subsection{Wat is een blockchain?}
 
-A blockchain is a decentralized and immutable public database of transactions. 
-The database is organized by connecting a chain of blocks together.
-Each block contains a group of transactions.
-The blocks are ordered in time and linked together using cryptographic hashes.\footnote{"A cryptographic hash function is a hash function which takes an input (or 'message') and returns a fixed-size alphanumeric string. The string is called the 'hash value'..." \cite{wikihash}}\footnote{The concept of a cryptographic chain of blocks dates back to Ehrsam, Meyer, Smith and Tuchman's invention of Cipher Block Chaining (CBC) in 1976 \cite{cbc}. NB: this is distinct from \textit{blockchain} as discussed here in many ways, notably because it does not include a proof-of-work.}
-Large quantities of computational resources must be expended to create each block hash,\footnote{This is generically called Proof-of-Work but also includes Sunny King's innovation: Proof-of-Stake \cite{peercoin}.} and each block contains the previous block's hash: \textit{this is how they are chained}.
+Een blockchain is een gedecentraliseerde en onveranderlijke openbare database van transacties. De database is georganiseerd door een reeks van blokken met elkaar te verbinden. Elk blok bevat een aantal transacties.
+De blokken worden gerangschikt op tijd en aan elkaar gekoppeld met behulp van cryptografische hashes.\footnote{"Een cryptografische hash-functie is een functie die een invoer (of 'bericht') neemt en een alfanumerieke tekenreeks van vast formaat oplevert. De string wordt de 'hash-waarde' genoemd"\cite{wikihash}}\footnote{Het concept van een cryptografische reeks blokken stamt uit de Ehrsam, Meyer, Smith en Tuchman's uitvinding van Cipher Block Chaining (CBC) in 1976 \cite{cbc}. NB: dit is verschillend van \textit{blockchain} die hier op verschillende manieren wordt besproken, vooral omdat het geen proof-of-work bevat.}
+Het berekenen van deze hashes vergt enorme computerkracht.\footnote{This is generically called Proof-of-Work but also includes Sunny King's innovation: Proof-of-Stake \cite{peercoin}.} Elke blok bevat de hash van het vorige blok: \textit{op deze manier worden de blokken met elkaar gelinkt}.
 
 \begin{center}
 \includegraphics[width=0.80\textwidth]{./blockchain.png}
 \end{center}
-The blocks are produced in intervals, forming a chain of verifiable blocks that contain the transaction history providing data a form that cannot be altered without redoing the work of the \textit{previous blocks} or \textit{confirmations}.
-The end result is a single, immutable journal of transactions grouped through time-ordered blocks distributed and verified by all of the nodes on the network.
+De blokken worden in intervallen geproduceerd en vormen een ketting van verifieerbare blokken die de transactiegeschiedenis bevatten. Deze gegevens kunnen niet gewijzigd worden zonder het werk van de \textit{voorgaande blokken} en \textit{bevestigingen} opnieuw uit te voeren.
+Het eindresultaat is een enkele, onveranderlijke ketting van transacties gegroepeerd door middel van tijd geordende blokken die zijn gedistribueerd en geverifieerd door alle nodes in het netwerk.
 
+\subsection{Hoe worden blokken gemaakt?}
 
-\subsection{How are Blocks Created?}
+Blokken worden gemaakt in een gedistribueerd netwerk van mijnwerkers \textit{(mensen die hun computers of speciale hardware in zetten om hashes te berekenen)} in een proces dat minen of in het nederlands mijnen wordt genoemd.
+Om het in mensentaal zeggen, stel je voor dat veel mensen in een kamer zitten en gemotiveerd zijn om een ​​prijs te winnen als ze de eerst zijn om de Rubik's puzzel op te lossen. De tegels van de Rubik's puzzel kunnen worden aanzien als transacties, waarbij een van de tegels de prijs \textit{(mint)} vertegenwoordigt die de winnaar mag claimen als hij de puzzel als eerst heeft opgelost. 
+Ze mogen slechts één willekeurige aanpassing doen per iteratie en worden beperkt door de snelheid van hun handen \textit{(sommige zijn sneller dan andere)}.
+Uiteindelijk zal één speler eindigen met een opgeloste puzzel. Wanneer men de oplossing vindt, wordt deze aan de andere spelers in de ruimte getoond. Als de andere spelers onafhankelijk verifiëren dat de puzzel correct is opgelost, wordt de winnaar beloond met de prijs en begint een nieuwe ronde.
 
-Blocks are created by a distributed network of miners \textit{(users operating special hardware to solve the proof of work puzzles)} in a process called mining.
-As an analogy for mining, imagine many people are sitting in a room out of motivation to win a prize if they solve their Rubik's Cube first.
-The tiles of the Rubik's Cube can be thought of as the transactions, with one of these tiles representing the prize \textit{(mint)} the winner is allowed to claim if they solve the cube. 
-However, they are only allowed to make one random change per iteration and they are limited by the speed of their hands \textit{(some may be faster than others)}.
-Eventually one player will end up with a solved cube.
-When one finds the solution, they show it to the other players in the room.
-If the other players independently verify that the cube is solved properly, the winner is rewarded with the prize and a new round begins.
+\subsection{Zijn blockchains de oplossing?}
 
-\subsection{Are Blockchains the Answer?}
+Blockchains zijn noodzakelijker nu we ons bewust worden van de uitdagingen waar we voor staan ​​in onze huidige samenleving. Door open te staan voor de uitdagingen worden we ons bewust van de beperkingen die legale monetaire systemen niet kunnen oplossen. We zien dat \textit{blockchains} veel monetaire uitdagingen oplossen, zoals ongecontroleerde inflatie, centrale banken en vele anderen. Toch zijn ze slechts een deel van de oplossing voor onze huidige economische omstandigheden.
 
-Blockchains have become more necessary as we become aware of the challenges we are facing in our current progression as a society.
-By maintaining open minds to recognize the challenges we face, we become aware of the limitations that legacy monetary systems cannot solve. 
-As is seen that \textit{blockchains} do solve many monetary challenges, such as uncontrolled inflation, central banking, and many others, they are only a part of the solution to our current economic circumstances.
-
-\epigraph{quantitative easing: unconventional monetary policy in which a central bank purchases government securities or other securities from the market in order to lower interest rates and increase the money supply}{\textit{Investopedia}}
+\epigraph{Kwantitatieve versoepeling of vrijer vertaald kwantitatieve geldverruiming is een vorm van directe geldschepping door een centrale bank, waarbij deze effecten (zoals staatsobligaties) aankoopt met voor dat doel gecreëerd geld.}{\textit{Investopedia}}
 
 \vspace{-138pt}
 \hspace{-25pt}
@@ -218,29 +222,27 @@ As is seen that \textit{blockchains} do solve many monetary challenges, such as 
 \vspace{5pt}
 
 \noindent
-The term \textit{blockchain} should not be confused with any encrypted database. The dollar is essentially an online virtual currency encrypted between banks that is redeemable for federal reserve notes \textit{Paper Money}. This does not make the dollar a blockchain. What makes a blockchain is a decentralized public journal with no central authority. 
-By owning a particular portion of a cryptocurrency, you prove partial ownership in the financial system.
+De term \textit{blockchain} moet niet verward worden met een versleutelde database (encryptie). De Dollar of Euro is in wezen een online virtuele valuta die gecodeerd is tussen banken die kan ingewisseld worden voor \textit{papieren geld}. Dit maakt de Dollar of Euro echter niet tot een blockchain. Wat een blockchain tot een echte blockchain maakt, is een gedecentraliseerd publiek beschikbaar dagboek (eng: ledger)  zonder centrale autoriteit. 
+Door een bepaald deel van een cryptocurrency te bezitten, bewijst u gedeeltelijk eigenaarschap in het financiële systeem.
 
-\subsection{Challenges of Money}
 
-The application and implementation of the world's monetary systems has become the source of one of the biggest challenges we face today.
-This is due to the many global policies designed for empowering central banks to create currencies as debt with interest associated. 
-Central Banks have the ability to influence world economies by changing interest rates, printing massive sums of money \textit{(otherwise known as inflation / hyperinflation)}, quantitative easing, or through various other forms of credit creation.
-There are many historical examples of central authorities who have misused this enormous power, knowingly or unknowingly, to the detriment of the people that these institutions exist to serve. 
-These include post-World War I Germany with a hyperinflation of up to 30,000\% per month, Zimbabwe during the Great Recession of the last decade with nearly 79 billion percent per month inflation, and post-World War II Hungary, with inflation rates of nearly \textit{13,000,000,000,000\%} per year.  \footnote{The estimated 200\% per day inflation equates to about thirteen quadrillion percent per year \cite{hyperinflation}}.
+\subsection{De uitdagingen van geld}
+
+De toepassing en implementatie van alle monetaire systemen in de wereld is een van de grootste uitdagingen waar we vandaag de dag voor staan. Dit is te wijten aan de vele wereldwijde beleidslijnen die ontworpen zijn om centrale banken in staat te stellen valuta's te cre\"eren als schulden met bijbehorende rente. Centrale banken hebben de mogelijkheid om de wereldeconomie\"en te beïnvloeden door de rentetarieven te veranderen, massa's geld te drukken \textit{(ook bekend als inflatie of hyperinflatie)}, kwantitatieve versoepeling of door verschillende andere vormen van kredietcreatie. Er zijn veel historische voorbeelden van centrale autoriteiten die deze enorme macht misbruikt hebben en dit allemaal ten koste van mensen die van deze instellingen afhankelijk waren. Voorbeelden hiervan zijn de hyperinflatie die opliep tot 30,000\% per maand in Duitsland na de eerste wereldoorlog, de Grote Recessie in Zimbabwe van het afgelopen decennium met bijna 79 miljard procent inflatie per maand en Hongarije na de tweede wereldoorlog, met inflatiecijfers van bijna \textit{13,000,000,000,000\%} per jaar.  \footnote{De geschatte 200\% per dag inflatie komt overeen met ongeveer dertien miljard percenten jaar \cite{hyperinflation}}.
 
 
 \section{Nexus}
 
-Multiple components need to be considered when providing the fundamental basis for change and freedom.
-The following is a brief outline of the core components that comprise the foundation of Nexus.
+Bij het bieden van de fundamentele basis voor verandering en vrijheid moeten meerdere componenten overwogen worden. 
+Het volgende is een korte schets van de hoofdcomponenten die de basis vormen van Nexus.
 
 \subsection{Hardware}
 
-Nexus is researching and developing three types of networks that will work together to form a new telecommunications system. 
-These are outlined in the sections below.
+Nexus onderzoekt en ontwikkelt drie soorten netwerken die samenwerken om een ​​nieuw telecommunicatiesysteem te vormen. Deze worden beschreven in de onderstaande paragrafen.
 
-\subsubsection{Mesh Networks}
+\newpage
+
+\subsubsection{Mesh Netwerken}
 
 \begin{wrapfigure}[14]{l}{0.44\textwidth}
     \centering
@@ -248,88 +250,76 @@ These are outlined in the sections below.
     \includegraphics[width=0.44\textwidth]{mesh.png}
 \end{wrapfigure}
 
-A mesh network is a network topology in which each node relays data for the network. All mesh nodes cooperate in the distribution of data in the network \cite{meshnetworks}.\\ 
+Een mesh netwerk is een netwerktopologie waarbij elk knooppunt gegevens doorgeeft. Alle netwerk knooppunten werken samen bij de distributie van gegevens in het netwerk \cite{meshnetworks}.\\ 
 
 \noindent 
-This allows for the growth of ground-based networks to handle data exchange in localized areas. \\
+Dit maakt de groei mogelijk voor netwerken op de grond om gegevensuitwisseling in gelokaliseerde gebieden af ​​te handelen.\\
 
-\noindent Ground-based mesh networks will solve many telecommunication issues.
-Specialized antennas can be produced for people to purchase and operate, thereby forming networks owned by the individuals who built it.
+\noindent Deze op de grond gebaseerde mesh netwerken zullen veel telecommunicatie problemen oplossen. Gespecialiseerde antennes kunnen door mensen aangekocht en bedient worden, waardoor er netwerken worden gevormd die eigendom zijn van de personen die het  gebouwd hebben.
 
 \subsubsection{Cube Satellites}
 
-As mesh networks grow, they will need to overcome the problem with line of sight and transcontinental communication. 
-% * <maramichael@q.com> 2017-07-04T03:07:19.811Z:
-% 
-% > the problem
-% What is the problem? The reader needs more detail so that they understand why this section is important to include.
-% 
-% ^ <maramichael@q.com> 2017-07-04T03:09:09.753Z.
-This issue can be solved with the deployment of a satellite constellation designed to focus towards orbital cache layers and mesh network relays. 
-This will provide caching of data and relaying of data between ground-based mesh networks.
+Cube satellites of in het nederlands mini satellieten in de vorm van een kubus maken deel uit van het mesh netwerk dat naarmate de groei de problemen met line of sight en transcontinentale communicatie moeten overwinnen. Dit probleem kan worden opgelost met een constellaties van satellieten die ontworpen is om de caching laag te voorzien in de ruimte voor het mesh netwerk dat op zijn beurt gegevens uitwisselt met het mesh netwerk dat zich op de grond bevindt.
 
-\subsubsection{Ground Stations}
+\subsubsection{Grondstations}
 
-Ground stations will provide the satellite \textit{uplink/downlink} operations. 
-These stations will be responsible for ground-based caching, the running of a nexus daemon, and the defining of a route to relay data to the addressed endpoint.
+Grondstations zorgen voor de satelliet \textit{up en downlinks}. 
+Deze zijn verantwoordelijk voor de  caching van gegevens op de grond, het draaien van een nexus daemon en het definiëren van een route om gegevens door te sturen naar een geadresseerd eindpunt.
 
 \subsection{Software}
 
-There are many types of software applications that are integral parts of the functionality and efficiency of Nexus. The software systems are constantly being developed and improved upon as Nexus continues to mature.
+Er zijn veel soorten softwaretoepassingen die een integraal onderdeel zijn van de functionaliteit en efficiëntie van Nexus. De softwaresystemen worden voortdurend ontwikkeld en verbeterd naarmate Nexus groeit.
 
 \begin{itemize}
-\item \textbf{Daemon}
+\item \textbf{Daemon (achtergrond proces)}
 
-Nexus operates on a lower-level software application called the \textit{"Nexus Daemon"}.
-Instances of this software application communicate with one another, forming a peer-to-peer network.
-They exchange data in the form of transactions and secure them into a distributed database called a blockchain.
+Nexus werkt op een low-level software applicatie die we de \textit{"Nexus Daemon"} noemen.
+Verschillende instanties van deze softwaretoepassing communiceren met elkaar en vormen een peer-to-peer-netwerk. Ze wisselen gegevens uit in de vorm van transacties en beveiligen ze in een gedistribueerde database die een blockchain wordt genoemd.
 
-\item \textbf{Wallet}
+\item \textbf{Wallet (portemonnee)}
 
-A command line and graphical Qt version of the Nexus wallet is currently available for download \cite{githubnexusreleases} \cite{nexusearth}.
-A new version of the Nexus wallet will be a higher-level graphical application that allows access to the functions of the \textit{``Nexus Daemon"} through a HTML/JS interface. 
-The interface also acts as a modular framework in which modules can be developed and sold for a greater user experience.\footnote{This is under active development at the time of this writing.}
+Een command line en een grafische Qt versie van de Nexus wallet zijn momenteel beschikbaar \cite{githubnexusreleases} \cite{nexusearth}.
+De nieuwe versie van de Nexus wallet zal een grafische toepassing van hoger niveau zijn die toegang biedt tot de functies van de \textit{``Nexus Daemon"} via een HTML / JS-interface. 
+De interface fungeert ook als modulair framework waarin modules kunnen worden ontwikkeld voor een betere gebruikerservaring.\footnote{Dit is wordt actief ontwikkelt op het moment van dit schrijven.}
 
-\item \textbf{Library}
+\item \textbf{Library (bibliotheek)}
 
-The lower-level library includes three parts, namely Crypto, Database, and Protocol. 
-They form a lower-level set of programming base templates that can be used to create more complex class structures on top of them. 
+De lower-level library bestaat uit drie delen, namelijk Crypto, Databank en Protocol. Ze vormen een basis laag van programmeer sjablonen die kunnen  gebruikt worden om er complexere klassenstructuren bovenop te maken. 
 
 \end{itemize}
 
-\section{Specifications}
+\section{Specificaties}
 
-This section provides details on the specifications of the main software component of Nexus, the \textit{"Nexus Daemon"}.
-This software component is the foundation of the Nexus Network and takes into account Precise Emission, Mining, Trust, and other components of security and efficiency. 
+Dit gedeelte bevat details over de belangrijkste softwarecomponent van Nexus, de \textit{"Nexus Daemon"}.
+Deze software component is de basis voor het Nexus netwerk en houdt rekening met juiste uitgaves, mining, trust en andere componenten van beveiliging en effici\"entie.
+ 
 
 \subsection{Hashing}
 
-Hashing is a critical part of any cryptocurrency.
-The recent SHA-1 collision computation by Google underscores the need for more secure hashes \cite{googlesha1}. 
-One of the innovations of Nexus is the use of newer hashing functions with the goal of enhanced security.
+Hashing is een cruciaal onderdeel van elke cryptocurrency. 
+De recente SHA-1 botsing computatie die door Google werd ontdekt benadrukt de nood aan veiligere hashes \cite{googlesha1}. 
+Een van de innovaties van Nexus is het gebruik van nieuwe hashing-functies met als doel een verbeterde beveiliging.
 
 \subsubsection{SHA-2}
 
-SHA-256 is a member of the SHA-2 set of cryptographic hash functions.\footnote{SHA stands for Secure Hashing Algorithm.}
-It was designed by the National Security Agency (NSA) and published in 2001 \cite{wikisha2}.
-SHA-256 is used in Bitcoin mining and in the creation of Bitcoin addresses \cite{bitwiki256}.
+SHA-256 is lid van de SHA-2, een set van cryptografische hashfuncties.\footnote{SHA staat voor Secure Hashing Algorithm.}
+Het is ontworpen door de National Security Agency (NSA) en in 2001 gepubliceerd \cite{wikisha2}.
+SHA-256 wordt gebruikt in Bitcoin-mining en bij het maken van Bitcoin adressen \cite{bitwiki256}.
 
 \subsubsection{SHA-3}
 
-Nexus uses a newer, more secure hashing algorithm than that of Bitcoin.
-The SHA-3 \cite{sha3} standard was the result of a competition \cite{nistcompetitionend} with the goal of producing an alternative to SHA-2.
-This competition was organized by the National Institute of Standards and Technology (NIST).
-The winner of this competition was selected in 2012.
-The new SHA-3 standard algorithm is a subset of the cryptographic primitive family, Keccak \cite{nistgovk}.
+Nexus gebruikt een nieuwer, veiliger hashing algoritme dan dat van Bitcoin. 
+De SHA-3 \cite{sha3} standaard was het resultaat van een wedstrijd \cite{nistcompetitionend} met als doel een alternatief voor SHA-2 op te leveren. Deze wedstrijd werd georganiseerd door het National Institute of Standards and Technology (NIST). 
+De winnaar van deze wedstrijd werd in 2012 geselecteerd. 
+Het nieuwe algoritme SHA-3 is een subset van de cryptografische familie Keccak \cite{nistgovk}.
 
 \subsubsection{Skein}
 
-The Skein algorithm was the runner up in the NIST hash function competition \cite{wikiskein}.
-It is also used in Nexus, in combination with SHA-3.
-The advantage of this approach is greater diversity in the secure hashing functions used in Nexus.
+Het Skein-algoritme was de nummer twee in de NIST hashfunctie competitie \cite{wikiskein}.
+Deze wordt ook gebruikt in Nexus in combinatie met SHA-3. Het voordeel van deze aanpak is een grotere diversiteit in veilige hashing functies die in Nexus worden gebruikt.
 
 \begin{wrapfigure}{r}{0.50\textwidth} %this figure will be at the right
-    \caption{Four of the 72 rounds of the Threefish-512 block cipher used in Skein \cite{skeinpaper}.}
+    \caption{Vier van de 72 ronden van het Threefish-512 blokcijfer dat in Skein gebruikt word \cite{skeinpaper}.}
     \centering
     \includegraphics[width=0.50\textwidth]{skein-threefish-512-part.jpg}
 \end{wrapfigure}
@@ -337,17 +327,14 @@ The advantage of this approach is greater diversity in the secure hashing functi
 \pagebreak
 \subsubsection{Skein-Keccak}
 
-Nexus hashing is built from two secure hashing algorithms: Skein and Keccak \cite{sha3announce}. 
-These two algorithms are combined to form a single SK-1024 (Skein-Keccak 1024 bit) hash. 
-There are three types of output lengths in Nexus hashing: SK-256, SK-512, and SK-1024.
-Public keys are hashed with SK-256 to secure them from public knowledge until spent. 
-Transactions are hashed with SK-512 while SK-1024 is used for the proof-of-work hash.
+Nexus hashing is opgebouwd uit twee veilige hashing algoritmen: Skein en Keccak \cite{sha3announce}. 
+Deze twee algoritmen worden gecombineerd om één enkele SK-1024 (Skein-Keccak 1024 bit) hash te vormen. 
+Er zijn drie soorten uitvoer lengtes in Nexus hashing: SK-256, SK-512 en SK-1024. Publieke sleutels zijn gehashed met SK-256 om ze te beschermen tot ze worden gebruikt. 
+Transacties worden gehashed met SK-512 terwijl SK-1024 wordt gebruikt voor de proof-of-work hash.
 
-%\epigraph{Moving forward, it's more urgent than ever for security practitioners to migrate to safer cryptographic hashes such as SHA-256 and SHA-3.\cite{googlesha1}}{\textit{\footnotesize{Google Research}}}
+\subsubsection{Vergelijking van 256 bit en 1024 bit}
 
-\subsubsection{Comparison of 256 bit and 1024 bit}
-
-The following example illustrates the difference in size between a Nexus block hash and a Bitcoin block hash:
+Het volgende voorbeeld illustreert het verschil in grootte tussen een Nexus blok hash en een Bitcoin blok hash:
 
 \begin{itemize}
 \item Bitcoin Hash (256 bit)
@@ -370,34 +357,21 @@ f359b10ab85c3b226f41cf864c979e8492f854c56d3
 
 
 \pagebreak
-\subsection{Emission}
+\subsection{Uitgave}
 
-In Bitcoin, a fixed amount of BTC is available as a reward for miners in every block.
-This amount halves every four years, thereby reducing Bitcoin's inflation.
-However, this sudden change in the block reward is a shock to the market.
-Miners spend large sums of money on equipment and personnel.
-When the block reward halves, their profits are cut in half overnight.
-\footnote{Theoretically because this reduction in profits can be foreseen, miners can prepare for it ahead of time.
-Realistically, it's difficult for miners to account for this in a fast-changing system.}
-Such uncertainty could possibly have a negative effect on network security \cite{cdhalving}.
-\noindent Nexus improves upon this model by adjusting the reward with every block.
-Using the equations for exponential decay \textit{(with carefully chosen constant $k$)}, ($e^{-kt}$), 
-a deposit is made into reserves every minute.
-The reserve determines the available reward for miners.\\ 
+Emission of in het nederlands “uitgifte”. In Bitcoin is een vaste hoeveelheid BTC beschikbaar als beloning voor mijnwerkers (miners) in elk blok. Dit bedrag halveert om de vier jaar, waardoor de inflatie van Bitcoin afneemt. Deze plotselinge verandering in de beloning per blok is echter een schok voor de markt. Mijnwerkers (miners) spenderen grote sommen geld aan apparatuur en personeel. Als de belong per blok halveert, wordt hun winst gehalveerd.
+\footnote{Deze winstdaling kan in theorie voorzien worden zodat mijnwerkers (miners) zich kunnen voorbereiden. Het is realistisch gezien moeilijk voor mijnwerkers (miners) om dit te verantwoorden in een snel veranderend systeem.}
+Een dergelijke onzekerheid kan mogelijk een negatief effect hebben op de netwerkbeveiliging \cite{cdhalving}.
+\noindent Nexus verbetert dit model door de beloning bij elk blok aan te passen. Gebruikmakend van de vergelijkingen voor exponentieel verval \textit{(met een zorgvuldig gekozen constante $k$)}, ($e^{-kt}$), 
+wordt elke minuut een aanbetaling in reserves gedaan. Het reserve bepaalt de beschikbare beloning voor mijnwerkers (miners).\\ 
 
-\noindent The supply is locked to time and not the block production rate. 
-Inconsistent block times have no effect on the exact supply. 
-This allows the projected supply to be accurately calculated at any second past the network time lock.
+\noindent De beschikbare hoeveelheid is op tijd vergrendeld en niet op de productie van blokken. Inconsistente blocks hebben geen effect op de beschikbare hoeveelheid. Dit maakt het mogelijk de beschikbare hoeveelheid nauwkeurig te berekenen op elk moment na een netwerk tijdslot.
 
 \subsubsection{Reserves}
 
-A traditional water reservoir holds water that can be drawn upon by a town.
-The total amount of water the town can draw is limited based on how much is in the reservoir.
-In a similar way, the Nexus reserve system controls how much NXS is available to miners at a given time.\\ 
+Een traditioneel waterreservoir bevat water dat door een stad kan worden gebruikt. De totale hoeveelheid water die de stad kan gebruiken, is beperkt op basis van de hoeveelheid water in het reservoir. Op vergelijkbare wijze bepaalt het reservesysteem van Nexus hoeveel NXS beschikbaar is voor mijnwerkers (miners) op een bepaald moment.\\ 
 
-\noindent There are three reserves.
-The amount of NXS deposited into each reserve is 
-mathematically determined by the \textit{decay equations}.
+\noindent Er zijn drie reserves. De hoeveelheid NXS die in elke reserve wordt gestort, wordt wiskundig bepaald door \textit{vervalvergelijkingen}.
 
 \begin{equation}\label{eq:reserves}
 \resizebox{.75\hsize}{!}{$
@@ -408,15 +382,14 @@ mathematically determined by the \textit{decay equations}.
 \end{array} $}
 \end{equation}
 
-\noindent Where $T_m$ is the time in minutes and $V_{d}$, $V_{a}$, $V_{m}$ are the reserve deposit amounts for miner, ambassador, and developer reserves.
+\noindent Waar $T_m$ de tijd is in minuten en $V_{d}$, $V_{a}$, $V_{m}$ zijn de reserve stortingen voor mijnwerkers (miners), ambassadeurs en ontwikkelaars.
 
 \pagebreak
-\subsubsection{Rewards}
+\subsubsection{Beloningen}
 
-The rewards are calculated based on the reserve value.
-This prevents surplus emission beyond the target level.
-\noindent These three equations describe the intervals in which the block reward $V_{b}$ changes
-based on reserve values $V_{m}$ at $T_{m}$ by compounding the $T_{m}$ value from equations \ref{eq:reserves}.
+De beloningen worden berekend op basis van de reservewaarde. 
+Dit voorkomt uitgave voorbij het streefniveau.
+\noindent Deze drie vergelijkingen beschrijven de intervallen waarin de blokbeloning $V_{b}$ verandert op basis van reservewaarden $V_{m}$ bij $T_{m}$ door de $T_{m}$ waarde uit vergelijkingen te comprimeren \ref{eq:reserves}.
 
 \begin{equation}
 \resizebox{.60\hsize}{!}{$
@@ -430,100 +403,74 @@ $}
 \end{equation}
 
 \begin{center}
-Where $T_a$ is the actual time, $T_o$ is the offset time, and $T_t$ is the target time.\\
+Waar $T_a$ de werkelijke tijd is, $T_o$ de offset tijd is en $T_t$ de doeltijd is.\\
 \end{center}
 
 
-\subsubsection{Minting}
+\subsubsection{Intrest (Minting)}
 
 \begin{wrapfigure}{r}{0.50\textwidth}\label{fig:interestrate} %this figure will be at the right
     \centering
     \includegraphics[width=0.50\textwidth]{interest.png}
-    \caption{Interest Rate Graph.}
+    \caption{Rentevoet Grafiek.}
 \end{wrapfigure}
-%%Preston -Colin figure wrapping needs adjusted
 
-Peer-to-peer networks, such as Bitcoin and Nexus, require the support of many nodes around the world.
-If there aren't enough nodes, network stability, decentralization, speed, and security suffer.
-Bitcoin suffers from a tragedy of the commons\footnote{The tragedy of the commons is an economic problem in which every individual tries to reap the greatest benefit from a given resource. As the demand for the resource overwhelms the supply, every individual who consumes an additional unit directly harms others who can no longer enjoy the benefits \cite{tragedycommons}.}
-\noindent issue wherein everyone wants more people to run the peer-to-peer wallet, but there is little incentive to do so.
-Nexus solves this problem by rewarding people with newly minted coins for holding Nexus and keeping their wallet up and running 24/7.
-To put it simply, if someone installs the Nexus wallet on their computer and deposits enough NXS, then they will occasionally find a block and earn extra NXS.\footnote{This is a way to support the network and earn Nexus without costly and difficult-to-operate mining hardware and software.}\\
+Peer-to-peer-netwerken, zoals Bitcoin en Nexus, vereisen de ondersteuning van vele knooppunten over de hele wereld. Als er niet genoeg knooppunten zijn, lijden netwerk stabiliteit, decentralisatie, snelheid en beveiliging. Bitcoin zit met het probleem\footnote{Dit is een economisch probleem waarbij elk individu het meeste profijt probeert te trekken uit een bepaald middel\cite{tragedycommons}.}
+\noindent waarbij iedereen wil dat meer mensen een peer-to-peer-wallet draaien, maar er is weinig stimulans om het effectief te doen. Nexus lost dit probleem op door mensen te belonen met nieuwe munten om hun portemonnee 24/7 beschikbaar te houden en als knooppunt in het netwerk te fungeren. Om het simpel te zeggen: als iemand de Nexus portemonnee op zijn computer installeert en er voldoende NXS insteekt, dan zullen ze af en toe een blok vinden en extra NXS verdienen.\footnote{ Dit is een manier om het netwerk te ondersteunen en Nexus te verdienen zonder kostbare en moeilijk te bedienen hardware en software voor het genereren van munten (minen).}\\
 
-\noindent This minting system operates to give people larger rewards for greater contribution to the network. 
-As one produces blocks by using this method in a timely manner, one's trust grows.
-With a higher trust score comes a higher minting rate.
-The minting rate $R_m$ ranges from 0.5 \% - 3 \%.
+\noindent Dit systeem beloont deelnemers naarmate hun bijdrage aan het netwerk. Als iemand blokken produceert door deze methode te gebruiken, groeit zijn of haar vertrouwens score. Bij een hogere vertrouwens score komt een hogere intrest (minting rate). De intrest (minting rate) $R_m$ varieert van 0.5 \% tot 3 \%.
 
 \paragraph{}
 \begin{equation}
 \resizebox{.65\hsize}{!}{$R_m = \frac{0.025 \cdot ln(\frac{9 \cdot a_{t}}{31449600} + 1)}{ln(10)} + 0.005$}
 \end{equation}
 
-\noindent Where $a_t$ is the age of your trust key (the number seconds since the trust key's genesis transaction).
+\noindent Waar $a_t$ de leeftijd is van uw vertrouwens score (het aantal seconden sinds de Genesis transactie waarbij de Trustkey werd genereerd).
 
-\subsection{Block Validation}
+\subsection{Blok validatie}
 
-There are three ways to produce a valid Nexus block and mint new NXS.
-There are two proof-of-work channels and one proof-of-holdings channel.
-The proof-of-work channels are the Prime Channel and the Hashing Channel.
-In the Prime Channel, miners search for Dense Prime Clusters of ~308 digits in size.
-In the hash channel, standard Hashcash \cite{hashcash} style work is computed using the SK-1024 hashing algorithm. 
-The two proof-of-work channels prevent each other from producing too many blocks in a row, thus forcing a 51\% attacker across both channels.\footnote{Reserves between Prime and Hash are split evenly at 50 \%}
+Er zijn drie manieren om een ​​geldig Nexus blok te maken en nieuwe NXS te genereren. Er zijn twee proof-of-work kanalen en een kanaal met proof-of-holdings (bewijs van bewaring). De proof-of-work kanalen zijn het “Prime Channel” (Priemgetallen) en het “Hashing Channel”. In het “Prime Channel” zoeken mijnwerkers (miners) naar priemgetallen van ~308 cijfers groot.
+In het hash channel, wordt de standaard Hashcash \cite{hashcash} werkwijze gebruikt door middel van het SK-1024 hashing algoritme. 
+De twee proof-of-work-kanalen voorkomen dat er te veel blokken achter elkaar worden geproduceerd, waardoor een 51\% aanvaller over beide kanalen wordt gedwongen.\footnote{Reserves tussen Prime en Hash worden gelijk verdeeld, elk 50 \%}
 
-\subsubsection{Dense Prime Clusters}
+\subsubsection{Priemfactoren}
 
-The work done by miners in the Prime channel is a search for dense prime clusters \cite{wikiprimecluster}.\footnote{The numbers found in these searches are actually probable primes \cite{wikiprobable}. They pass the Fermat Prime test \cite{wikifermat} at base 2, 3, and 5.}
-Finding these dense prime clusters is a trial-and-error process.
-Miners must try many numbers to successfully find one that is the beginning of a dense prime cluster \cite{wolframprimecluster,primesolominer}.\\ 
+Het doel van het werk in het Prime Channel is een zoektocht naar priemfactoren \cite{wikiprimecluster}.\footnote{De cijfers die in deze zoekopdrachten worden gevonden, zijn eigenlijk waarschijnlijke priemgetallen \cite{wikiprobable}. Ze doorlopen de Fermat Prime test \cite{wikifermat} op basis 2, 3 en 5.}
+Het vinden van deze priemfactoren is een proces van vallen en opstaan. Mijnwerkers (miners) moeten vele getallen proberen om er een te vinden die het begin is van een priemfactor \cite{wolframprimecluster,primesolominer}.\\ 
 
-\noindent The count of prime numbers in a dense prime cluster is called its chain length.
-\footnote{The ``chain" here should not be confused with the chain in blockchain.}
-A dense prime cluster with a longer chain length is more difficult to find than one with a shorter chain length.
-The first prime number in the chain is required to be higher than the block hash and less than the block hash plus $2^{64}$.\footnote{The block hash can't be determined a priori for future blocks because it's based on previous block information. 
-Therefore, a miner must start their prime cluster search over again after each new block is found.}
-If the first prime in the cluster fits these criteria, it is considered a valid solution.\\
+\noindent Het aantal priemgetallen in een priemfactor wordt de kettinglengte genoemd.
+\footnote{De ``ketting" hier moet niet worden verward met de ketting in de blockchain.}
+Een priemfactor met een langere ketting is moeilijker te vinden dan een met een kortere ketting. Het eerste priemgetal in de keten moet hoger zijn dan de block hash en kleiner dan de block hash plus $2^{64}$.\footnote{De block hash kan niet a priori worden bepaald voor toekomstige blokken omdat deze gebaseerd is op eerdere blok informatie. Daarom moet een mijnwerker (miner) het zoeken naar hun priemfactor opnieuw starten nadat elk nieuw blok is gevonden}
+Als de eerste priemgetallen in het cluster aan deze criteria voldoen, wordt dit als een geldige oplossing beschouwd.\\
 
-\noindent One benefit to searching for dense prime clusters is that it is thought to be more resistant to GPU, FPGA, and ASIC mining than hashing.
-Another is that the data produced by the miner is useful for mathematical research into prime numbers \cite{findingprimeclusterspaper} \cite{nxsprimecom}.
-The applications of prime number research may extend beyond mathematics and into quantum physics \cite{physicsmathprime}.
-This is one of the ways that Nexus provides value back to the scientific community and the world.
+\noindent Een voordeel van het zoeken naar priemfactoren is dat er wordt aangenomen dat het resistent is tegen GPU-, FPGA- en ASIC-mining in tegenstelling tot hashing. Een andere voordeel is dat de door de mijnwerker (miners) geproduceerde gegevens nuttig zijn voor wiskundig onderzoek naar priemgetallen \cite{findingprimeclusterspaper} \cite{nxsprimecom}.
+De toepassingen van priemgetallen onderzoek kunnen verder reiken dan de wiskunde en de kwantumfysica \cite{physicsmathprime}.
+Dit is een van de manieren waarop Nexus waarde toevoegt aan de wetenschap en de wereld.
 
 \subsubsection{Hashing}
 
-The hashing channel uses a \textit{Hashcash} \cite{hashcash} style proof-of-work.
-Miners run code \cite{skminer,wolfniro} on GPU's in an attempt to find a hash that meets a given difficulty.
-If they are lucky, they will find a hash with at least a certain number of leading 0 bits. 
-This means that the hash is preceded by a number of 0's and is a smaller integer. 
-This is called a "partial collision".
-This is similar to the proof-of-work scheme that Bitcoin uses.
-Bitcoin uses SHA-256 while Nexus uses the newer SHA-3 in combination with Skein.
+Het hashing channel maakt gebruik van \textit{Hashcash} \cite{hashcash} proof-of-work.
+Mijnwerkers (miners) voeren code uit \cite{skminer,wolfniro} op GPU's in een poging een hash te vinden die aan een bepaalde moeilijkheidsgraad voldoet. Als ze geluk hebben, vinden ze een hash met minstens een bepaald aantal 0 bits in het begin. Dit betekent dat de hash wordt voorafgegaan door een aantal 0’en en een kleiner geheel getal is. Dit wordt een "gedeeltelijke botsing" genoemd. Dit is vergelijkbaar met de proof-of-work die Bitcoin gebruikt. Bitcoin gebruikt SHA-256 terwijl Nexus de nieuwere SHA-3 gebruikt in combinatie met Skein.
 
-\subsubsection{Holdings}
 
-Proof-of-Holdings \textit{(POH)} provides a third channel of security.
-An attacker would need to gain 51 percent of the NXS supply to attack this channel in conjunction with the hash and prime channels.
-The incentive for this proof system is newly minted coins which are rewarded to participants for actively ``holding" their coins. 
-This means the network incentives users to contribute to the security of the system. 
-This provides a natural growth in the coin supply over time that will be highly beneficial to the network, economy, and users.\\ 
+\subsubsection{Stockeren}
 
-\noindent Unlike current Central Bank models, this new supply of coins goes directly into the users hands rather than being filtered through a fractional reserve system. 
-Furthermore, these newly minted coins have zero debt associated with their issuance and, therefore, never need to be paid back to the system with associated interest, as is the case with many current fiat currencies.
-The minting rate was determined to be a variable rate between .5\% and 3\% to provide a small natural growth to the coin supply allowing for increased economic opportunity.
+Proof-of-Holdings \textit{(POH)} biedt een derde beveiligings kanaal. Een aanvaller zou 51 procent van de NXS voorziening nodig hebben om dit kanaal aan te vallen in combinatie met de hash- en prime-kanalen. Door deel te nemen aan dit systeem wordt je beloond voor het actief ``bijhouden" van je munten, de beloning is uiteraard nieuwe munten. Dit betekent dat het netwerk gebruikers stimuleert om bij te dragen aan de beveiliging van het systeem. Dit zorgt voor een natuurlijke groei van het aanbod van munten in de loop van de tijd, wat zeer bevorderlijk zal zijn voor het netwerk, de economie en gebruikers.\\ 
 
-\subsection{Difficulty}
+\noindent In tegenstelling tot de huidige modellen van de Centrale Bank, gaat dit nieuwe aanbod munten rechtstreeks in handen van de gebruikers in plaats van te worden gefilterd door een fractioneel reserve systeem. Bovendien hebben deze nieuw geslagen munten geen schuld in verband met hun uitgifte en hoeven ze daarom nooit terug te worden betaald aan het systeem met bijbehorende rente, zoals het geval is met veel huidige valuta's. De wisselkoers is vastgesteld als een variabele rente tussen 0.5\% en 3\% om een ​​kleine natuurlijke groei aan de munt voorraad toe te staan met als doel de economische mogelijkheden te vergroten.
 
-The difficulty of finding a block is adjusted with every new block.
-The Nexus difficulty algorithm combines weighted averages for the last $n$ blocks.
-A weighted average time, $T_a$ is calculated as follows:\\ 
+\subsection{Moeilijkheidsgraad (Difficulty)}
+
+De moeilijkheid om een ​​blok te vinden, wordt bij elk nieuw blok aangepast. Het Nexus moeilijkheid algoritme combineert gewogen gemiddelden voor de laatste $n$ blokken.
+Een gewogen gemiddelde tijd, $T_a$ wordt als volgt berekend:\\ 
 
 \begin{equation}
 \resizebox{.75\hsize}{!}{$T_{a} = \frac{\sum_{i=1}^{n} w \cdot i [ T_b(H - n + i) - T_b(H-n+i-1) }{n}$}
 \end{equation}\\ 
 
-\noindent Where $H$ is the current block height, $T_b$ is the block time stamp at a given height, $n$ is the blockchain depth, and $w$ is a weight constant (currently set to 3).\\  
+\noindent Waar $H$ huidige blok moeilijkheid is, $T_b$ is de blok tijdsindicatie op een gegeven moeilijkheid, $n$ is de blockchain diepte en $w$ is een gewichts constante (momenteel ingesteld op 3).\\  
 
-\noindent $Mod_d$ is the factor used to modify the difficulty\\ 
+\noindent $Mod_d$ is de factor die wordt gebruikt om de moeilijkheidsgraad te wijzigen\\ 
 
 \begin{equation}
 \resizebox{.70\hsize}{!}{$
@@ -535,26 +482,21 @@ A weighted average time, $T_a$ is calculated as follows:\\
 $}
 \end{equation}
 
-\noindent Where $T_t$ is the target time, $T_o$ is the offset time, $Min_d$ is the minimum difficulty decrease and $Max_d$ is the maximum difficulty increase.
+\noindent Waar $T_t$ de streeftijd, $T_o$ is de offset tijd, $Min_d$ is de minimale moeilijkheidsgraad vermindering en $Max_d$ is de maximale moeilijkheidsgraad verhoging.
 
-\epigraph{It's a vice to trust everyone, and equally a vice to trust no one.}{\textit{\footnotesize{Seneca}}}
+\epigraph{Het is een ondeugd om iedereen te vertrouwen, evenveel als een ondeugd om niemand te vertrouwen.
+}{\textit{\footnotesize{Seneca}}}
 
 \pagebreak
-\subsection{Trust}\label{subsection:Trust}
+\subsection{Vertrouwen (Trust)}\label{subsection:Trust}
 
-Trust is a core component of Nexus.
-Nodes which have a vested interest in and are acting to benefit the whole network by participating honestly and consistently are considered more trustworthy.
-Currently, trust is earned by holding Nexus in a wallet and producing valid blocks on a regular basis.
-This earned trust is recorded in the Nexus blockchain and is associated with a trust key.\\ 
+Vertrouwen of Trust is een kern component van Nexus. Knooppunten (of zoals hierboven aangehaald deelnemers) die een gevestigd belang hebben in en ten goede komen aan het gehele netwerk door consistent deel te nemen, worden als betrouwbaarder beschouwd. Op dit moment wordt vertrouwen verdiend door Nexus in een portefeuille te houden en regelmatig geldige blokken te genereren. Dit verdiend vertrouwen wordt vastgelegd in de Nexus blockchain en is gekoppeld aan een vertrouwens code.\\ 
 
-\noindent Future areas of research and development in Nexus are focusing on using the concept of trust in many ways.
-Using trust, a new security model can be developed around time.
-The strength of the Nexus economy and its reliability will be reinforced by promoting truthfulness between the voluntary interactions with individuals and groups of individuals.
+\noindent Toekomstig onderzoek en de ontwikkeling van Nexus zal zich concentreren op het op vele manieren gebruiken van het concept van vertrouwen. Met behulp van vertrouwen kan een nieuw beveiligingsmodel ontwikkeld worden. De kracht van de Nexus economie en de betrouwbaarheid ervan zal versterkt worden door de het vertrouwen tussen de vrijwillige interacties met individuen en groepen van individuen.
 
-\subsubsection{Weight}
+\subsubsection{Gewicht (Weight)}
 
-Weight governs the speed in which one can search for new trust blocks. 
-It comes in the form of two different weight variables: Block Weight ($W_b$) and Trust Weight ($W_t$).
+Gewicht bepaalt de snelheid waarmee kan worden gezocht naar nieuwe vertrouwens blokken. Het komt in de vorm van twee verschillende gewichts variabelen: Blok gewicht ($W_b$) en Vertrouwen gewicht ($W_t$).
 
 \begin{equation}
 W_{t} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200}) + 1}{ln(3)} + 1.0)
@@ -564,33 +506,30 @@ W_{t} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200}) + 1}{ln(3)} +
 W_{b} = Min(20.0,\frac{19.0 \cdot ln(\frac{2 \cdot a_b}{86400}) + 1}{ln(3)} + 0.05)
 \end{equation}
 
-\noindent Where $a_t$ is the trust age and $a_b$ is the block age.
+\noindent Waar $a_t$ de vertrouwens leeftijd is en $a_b$ de leeftijd van de block.
 
-\subsubsection{Threshold}
+\subsubsection{Drempel (Threshold)}
 
-A system has been developed to allow an energy-efficient time-based trust system.
-This is regulated by the Energy Efficiency Threshold $E_t$.
+Er is een systeem ontwikkeld om een op tijd gebaseerd ​​energie efficiënt vertrouwen systeem mogelijk te maken. Dit wordt geregeld door de Energie Efficiënte Drempel (Energy Efficiency Threshold) $E_t$.
 
 \begin{equation}
 \resizebox{.22\hsize}{!}{$E_{t} = \frac{100 \cdot T_{a}}{N_{once}}$}
 \end{equation}
 
 \pagebreak
-The Required Threshold $R_t$ is
+De vereiste drempelwaarde $R_t$ is
 
 \begin{equation}
 \resizebox{.5\hsize}{!}{$R_{t} = \frac{(50 - W_{t} - W_{b}) \cdot 1000}{C}$}
 \end{equation}
 
-Where C is the total NXS in a trust transaction.
+Waarbij C de totale NXS is in een vertrouwens transactie.
 
-\subsubsection{Genesis}
+\subsubsection{Vertrouwenssleutel (Genesis)}
 
-The genesis transaction is the first transaction of a trust key. 
-This is required to act as the root of the trust key's age in order to gain a reference on its current weight and minting rate. 
-The hash of this genesis transaction can therefore be used as an input in future transactions to verify that a trust block is linked to a corresponding genesis transaction.
+De genesis transactie is de eerste transactie van een vertrouwens sleutel. Deze bepaald de beginleeftijd van de vertrouwens sleutel en dient vervolgens om een ​​referentie te krijgen over zijn huidige gewicht en de bijbehorende intrest. De hash van deze genesis transactie kan daarom worden gebruikt als invoer in toekomstige transacties om te verifiëren dat een vertrouwens blok gekoppeld is aan een bijbehorende genesis transactie.
 
-\noindent The following equation describes the genesis weight required to get a high enough threshold to achieve the creation of a genesis transaction and corresponding block\footnote{Genesis transaction weight does not include block weight.}
+\noindent De volgende vergelijking beschrijft het genesis gewicht dat vereist is om een ​​drempelwaarde te bereiken die hoog genoeg is voor een genesis transactie te creëren met bijbehorend blok.\footnote{Genesis transactie gewicht omvat niet het blok gewicht.}
 
 \begin{equation}
 \resizebox{.70\hsize}{!}{$
@@ -598,66 +537,59 @@ W_{g} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_{c}}{7257600}) + 1}{ln(3)}
 $}
 \end{equation}
 
-\noindent Where $a_c$ is the coin age of the coins which are being used.
+\noindent Waarbij $a_c$ de munt leeftijd is van de gebruikte munten.
 
-\subsubsection{Intervals}
+\subsubsection{Interval (Intervals)}
  
-Trust blocks cannot be created from the same trust key unless the interval or number of blocks between their last trust block exceeds $I_{t} \geq 6$.
+Vertrouwens blokken kunnen niet met dezelfde vertrouwens sleutel worden gemaakt, tenzij het interval of het aantal blokken tussen hun laatste vertrouwens blok groter is dan $I_{t} \geq 6$.
 
-\subsection{Clock Drift}
+\subsection{Tijdsverschil (Clock Drift)}
 
-Clock drift refers to several related phenomena where a clock does not run at exactly the same rate as a reference clock \cite{wikiclockdrift}.
-This is usually resolved by connecting to a central server and/or atomic clock.
-Nexus combats this with a peer-to-peer time-keeping system that keeps all clocks on the network synchronized to the unified time seed.
+Clock drift verwijst naar verschillende gerelateerde verschijnselen waarbij een klok niet exact hetzelfde loopt als een referentie klok \cite{wikiclockdrift}.
+Dit wordt meestal opgelost door verbinding te maken met een centrale server en / of een atoom klok. Nexus lost dit op met een peer-to-peer tijdregistratiesysteem dat alle klokken op het netwerk gesynchroniseerd houdt met een universeel tijd protocol.
 
-\subsection{Security}
 
-Bitcoin and other cryptocurrencies allow up to 2 hours in the future for clock drift, which means that blocks can be created up to 2 hours from the current network \textit{timestamp}, thereby leaving potential attack vectors.
-Nexus combats this synchronization not with median time, as Bitcoin uses, but rather with a Unified Time system that operates on the protocol level keeping all Nexus clocks synchronized to the second.
+\subsection{Beveiliging (Security)}
 
-\subsection{Time-Locks}
+Bitcoin en andere cryptocurrencies staan tot maximaal 2 uur klok afwijking in de toekomst toe, wat betekent dat blokken tot 2 uur voorbij de huidige netwerk tijd (in het Engels \textit{timestamp}) kunnen gemaakt worden, waardoor potentiële aanvalsvectoren ontstaan. 
+Nexus bestrijdt deze synchronisatie problemen niet met de mediaan doorheen de tijd, zoals Bitcoin dat doet, maar eerder met een Unified Time systeem dat op protocol niveau werkt, zodat alle Nexus klokken tot op de seconde gesynchroniseerd zijn.
 
-Because clocks in the Nexus network are synchronized, new rules can be activated in the protocol based on time stamps rather than block numbers.
-This allows network participants to more accurately activate consensus updates.
+\subsection{Tijdslot (Time-Locks)}
 
-\subsection{Checkpoints}
+Omdat de klokken in het Nexus netwerk worden gesynchroniseerd kunnen nieuwe regels in het protocol worden geactiveerd op basis van tijd stempels (in het Engels \textit{timestamp}) in plaats van bloknummers. Dit stelt netwerkdeelnemers in staat om consensus updates nauwkeuriger te activeren.
 
-Automated decentralized checkpoints are created every hour.
-A checkpoint prevents any block that was not rooted from the last hardened checkpoint to be invalid.
-This prevents an attacker from producing an alternative blockchain prior to the last checkpoint time.
+
+\subsection{Controlepunten (Checkpoints)}
+
+Geautomatiseerde en gedecentraliseerde controlepunten worden elk uur gemaakt. Een controlepunt verhindert dat een blok die niet ontstaan is uit het laatste controlepunt ongeldig is. Dit voorkomt dat een aanvaller een alternatieve blockchain produceert die het vorige controlepunt vooraf gaat.
 
 \bigskip
-\epigraph{I think I can safely say that nobody understands quantum mechanics.}{\textit{\footnotesize{Professor Richard Feynman, 1965 Physics Nobel Laureate \cite{nobelfeynman}}}}
+\epigraph{Ik denk dat ik gerust kan zeggen dat niemand quantummechanica	begrijpt.
+}{\textit{\footnotesize{Professor Richard Feynman, 1965 Natuurkunde Nobelprijswinnaar \cite{nobelfeynman}}}}
 
 \pagebreak
-\section{Post-Quantum Considerations}
+\section{Post-quantum-overwegingen}
 
 \begin{wrapfigure}{r}{0.60\textwidth} %this figure will be at the right
-	\vspace{-35pt}
+	\vspace{-15pt}
     \centering
     \includegraphics[width=0.50\textwidth]{grovers.jpg}
-    \caption{Grover's Algorithm on Two Qubits}
+    \caption{Het algoritme van Grover over twee Qubits}
 \end{wrapfigure}
 
-\subsection{Grover's Algorithm}
+\subsection{Algoritme van Grover}
 
-Grover's algorithm is a quantum algorithm which was devised by Lov Grover at Bell Labs.
-The summary in Grover's 1996 paper provides a helpful description:
-"Imagine a phone directory containing N names arranged in completely random order. 
-In order to find someone's phone number with a probability of one half, 
-any classical algorithm... will need to look at a minimum of $N/2$ names. 
-Qubits can be in a superposition of states, which means that a qubit can be either a 0 or a 1.
-As a result, the desired phone number can be obtained in only $O(\sqrt{N})$ steps \cite{lovgrover}."\\ 
+Het algoritme van Grover is een quantum algoritme dat werd bedacht door Lov Grover in Bell Labo. De samenvatting in Grover's theorie uit 1996 biedt een nuttige beschrijving: "Stel je een telefoongids voor met N namen gerangschikt in willekeurige volgorde. Om iemands telefoonnummer te vinden met een waarschijnlijkheid van de helft, zal elk klassiek algoritme ... een minimum van $N/2$ namen moeten bekijken. Qubits kunnen in een superpositie van toestanden zijn, wat betekent dat een qubit een 0 of een 1 kan zijn. Als gevolg hiervan kan het gewenste telefoonnummer alleen worden verkregen in $O(\sqrt{N})$ stappen \cite{lovgrover}."\\ 
 
-\noindent Given the output of a black box function, it can be used to determine\footnote{In a probabilistic manner.} the input.
-This implies that most one-way cryptographic hash functions are susceptible to this algorithm.
-Indeed, Grover's algorithm could brute-force a 256-bit key in roughly $2^{128}$ iterations.\\ 
+\noindent Het resultaat van een black box-functie kan worden gebruikt om\footnote{Op een probabilistische manier.} de invoer te bepalen.
+Dit betekent dat de meeste eenrichtings cryptografische hashfuncties gevoelig zijn voor dit algoritme. 
+En inderdaad, het algoritme van Grover kan een 256-bits sleutel door middel van brute force via $2^{128}$ iteraties de input berekenen.\\ 
 
-\noindent The algorithm proceeds to call $G$ $[\frac{\pi}{4} \cdot 2^{\frac{k}{2}}]$ times in the verification of the subroutines. The largest overhead, though, in Grover's Algorithm is the cost of error detection that must be done classically to ensure the accuracy of the qubits (overcoming quantum noise), and the two subroutines of Grover Iteration.\\
+\noindent Het algoritme gaat door met het oproepen van $G$ $[\frac{\pi}{4} \cdot 2^{\frac{k}{2}}]$ voor de verificatie van de subroutines. De grootste overhead in het algoritme van Grover is echter de kost van foutdetectie die klassiek moet worden uitgevoerd om de nauwkeurigheid van de qubits te garanderen (het overwinnen van kwantum ruis) en de twee subroutines van Grover iteratie te waarborgen.\\
 
 
 \begin{table}[ht]
-\caption{Resource Comparison for Grover Search of SHA-256 and SHA3-256 \cite[p.~18]{groversalgorithm}}
+\caption{Vergelijking voor Grover zoekopdracht van SHA-256 en SHA3-256 \cite[p.~18]{groversalgorithm}}
 \begin{center}
 \begin{tabular}{c|ccc|}
     \hline
@@ -692,47 +624,42 @@ Indeed, Grover's algorithm could brute-force a 256-bit key in roughly $2^{128}$ 
 \end{table}
 %bdg% Table reviewed, matches info from referenced paper, page 18.
 
-\noindent The first subroutine of $G$ is attempting to assert g : $\{0, 1\}^k \rightarrow \{1, 0\}$ maps $X$ to $1$ only if $f(x) = y$. 
-The next subroutine is called the \textit{``Diffusion Operator"}, and it implements the transformation of g to increase the probability that $f(x) = y$.\\ 
+\noindent De eerste subroutine van $G$ probeert te beweren dat g : $\{0, 1\}^k \rightarrow \{1, 0\}$ alleen $X$ op $1$ toewijst als $f(x) = y$. 
+De volgende subroutine wordt de \textit{``Diffusion Operator"} genoemd en implementeert de transformatie van g om de kans te vergroten dat $f(x) = y$.\\ 
 
-\noindent As illustrated in Table 1, Grover's Algorithm results in a nearly 50\% reduction to the security provided by one-way hashing functions against brute-force attacks.
-This implies that a hash, which has twice as many bits, should be used to achieve the same level of security against brute-force attacks.
+\noindent Zoals geïllustreerd in Tabel 1 resulteert het algoritme van Grover in een reductie van bijna 50\% op de beveiliging geboden door one-way hashing functies tegen brute force aanvallen. Dit houdt in dat een hash, die twee keer zoveel bits heeft, gebruikt moet worden om hetzelfde niveau van beveiliging tegen brute force aanvallen te bereiken.
 
 
-\subsection{Elliptic Curve Cryptography}
+\subsection{Elliptische Curve cryptografie}
 
-Elliptic Curve Cryptography, in terms of classical computing, retains high security standards with smaller key sizes compared to RSA \cite{wikikeysize}.
-The following equation can be used to represent an elliptic curve:
+Elliptische curve cryptografie, in termen van klassiek computergebruik, behoudt hoge veiligheidsstandaarden met kleinere sleutelgrootten in vergelijking met RSA \cite{wikikeysize}.
+De volgende vergelijking kan worden gebruikt om een ​​elliptische curve weer te geven:
 
 \begin{equation}
 \resizebox{.33\hsize}{!}{$y^2 = x^3 + ax + b$}
 \end{equation}
 
 %%Preston -Colin figure wrapping needs adjusted
-
-\subsection{Curve Groups and Fields}
+\pagebreak
+\subsection{Curve groepen en velden}
 
 
 \begin{wrapfigure}[8]{r}{0.40\textwidth} %this figure will be at the right
 \vspace{-40pt}
-\caption{Illustration of an Elliptic Curve}
+\caption{Illustratie van een elliptische curve}
     \centering
     \includegraphics[width=0.40\textwidth]{ecc.JPG}
 \end{wrapfigure}
 
-In Nexus, the elliptic curve domain parameters are based on \textit{sect571r1} \cite{sect571r1} as defined in the ``Standards for Efficient Cryptography 2: Recommended Elliptic Curve Domain Parameters" and they are defined over a binary field $\mathbb{F}_{2^m}$.
-The domain parameters that are used in most other digital currencies are based on \textit{secp256k1} \cite{secp256k1}. These parameters are associated with a Kolbitz curve and are defined over a prime field  $\mathbb{F}_p$.
+In Nexus zijn de elliptische curve domein parameters gebaseerd op \textit{sect571r1} \cite{sect571r1}zoals gedefinieerd in de "Standards for Efficient Cryptography 2: Recommended Elliptic Curve Domain Parameters" en deze worden gedefinieerd over een binair veld $\mathbb{F}_{2^m}$.
+De domein parameters die in de meeste andere digitale valuta's worden gebruikt, zijn gebaseerd op \textit{secp256k1} \cite{secp256k1}. Deze parameters zijn geassocieerd met een Kolbitz curve en worden gedefinieerd over een priem veld  $\mathbb{F}_p$.
 
-\subsection{Private Keys}
+\subsection{Private sleutels (Private Keys)}
 
-A private key is a number that should only be known to the owner of the coins in a given address.
-To produce a secure private key, it's necessary to start with a number that is as close to truly random as possible.\footnote{This is handled by the Nexus wallet software - it generates private keys and stores them.}
-If anyone is able to determine what the private key is, they can move the coins to another address.
-This is why private key security is so important.
-You don't want anyone else to find out what your 'secret number' is, 
-and you don't want them to be able to guess it or determine it with a complex algorithm based on public information.
-Both Bitcoin and Nexus use large numbers so that there is almost no chance that anyone else will generate the same random number, and it is impossible for anyone to try all of the numbers.\footnote{"How many numbers? For every grain of sand on Earth, create a new Earth. There are 26 billion unique Bitcoin addresses for each grain of sand on each of those Earths."\cite{weusesand} Because the keys in Nexus are longer, there are astronomically more possible Nexus addresses.}
-Bitcoin keys are 256 bits in length, while Nexus keys are more than twice as long at 571 bits.
+Een private key is een sleutel dat alleen aan de eigenaar van munten op een bepaald adres moet kennen. 
+Als u een beveiligde private key wilt maken, moet u beginnen met een getal dat zo dicht mogelijk bij het echt willekeurige ligt.\footnote{Dit wordt afgehandeld door de Nexus portefeuille software - deze genereert private keys en bewaart ze.}
+Als iemand kan achterhalen wat de privésleutel is, kan hij of zij de munten verplaatsen naar een ander adres. Daarom is beveiliging van de private key zo belangrijk. U wilt niet dat iemand anders ontdekt wat uw 'geheime sleutel' is en u wilt niet dat zij het kunnen raden of bepalen met een complex algoritme op basis van openbare gegevens. Zowel Bitcoin als Nexus gebruiken grote getallen, zodat er bijna geen kans is dat iemand anders hetzelfde willekeurige nummer genereert en het onmogelijk is voor iedereen om alle nummers te proberen.\footnote{"Hoeveel nummers? Maak voor elke korrel zand op aarde een nieuwe aarde. Er zijn 26 miljard unieke Bitcoin adressen voor elke korrel zand op elk van die aardes. "\cite{weusesand} Omdat de sleutels in Nexus langer zijn, zijn er astronomisch meer mogelijke Nexus adressen.}
+Bitcoin sleutels zijn 256 bits lang, terwijl de Nexus sleutels meer dan twee keer zo lang zijn namelijk 571 bits.
 
 \bigskip
 \textbf{Bitcoin Private Key (256 bit)}
@@ -747,85 +674,78 @@ Bitcoin keys are 256 bits in length, while Nexus keys are more than twice as lon
 Vt5TNT9himnCMmnbjbCPxgxhSTDE5iAzCZ3LhJFm7L9rCFroYoqz
 \end{lstlisting}
 
-\subsection{Public Keys}
+\subsection{Publieke sleutels (Public Keys)}
 
-It's easy to derive a public key from a private key, but not a private key from a public key.
-When you request a payment from someone, you first get a \textit{Nexus address} from your wallet.
-This address is not your public key, it is called a public key hash, or \textit{PKH}.
-As the name implies, it's created by hashing your public key and converting it into Base58 encoding.
-This means that an attacker who wants to figure out your private key first has to determine your public key from the \textit{PKH}.
-Fortunately, this is an intractable problem. Current research indicates this may take even quantum computers on the order of a hundred billion years \cite{registersha3,cryptosha3} to reveal the public key.
-The public key associated with a \textit{PKH} is not revealed until the coins are spent \cite{bitcorepkh}.
-Therefore, one can achieve a high level of quantum attack resistance simply by not re-using addresses.\\
+Het is eenvoudig om een public key te bepalen van een private key, maar niet omgekeerd. Wanneer u een betaling van iemand vraagt, ontvangt u eerst een \textit{Nexus address} van uw portemonnee.
+ Dit adres is niet uw public key, dit wordt een publieke sleutel hash of \textit{PKH} genoemd.
+Zoals de naam al aangeeft, is deze gemaakt door uw public key te hashen en deze te converteren naar Base58 codering. Dit betekent dat een aanvaller die eerst uw private key wil achterhalen uw public key moet bepalen via de \textit{PKH}.
+Gelukkig is dit een onoverkomelijk probleem. Lopend onderzoek wijst uit dat dit zelfs quantum computers in de orde van honderd miljard jaar \cite{registersha3,cryptosha3} kan kosten om de publieke sleutel te achterhalen.
+ De public key die is gekoppeld aan een \textit{PKH} wordt niet onthuld totdat de munten zijn uitgegeven \cite{bitcorepkh}.
+Daarom kan een hoog niveau tegen kwantum aanvallen eenvoudig worden bereikt door adressen niet opnieuw te gebruiken.\\
 
-\subsection{Shor's Algorithm}
+\subsection{Algoritme van Shor}
 
-\noindent In 1994, Peter Shor created an algorithm which could be used to solve the Integer Factorization Problem \textit{IFP} and the Discrete Logarithm Problem \textit{DLP} in polynomial time on a quantum computer \cite{shorarxiv}.
-This was an important achievement because these problems have no classical polynomial time solution.
-This means that, on a classical computer, they can't be solved in any amount of time which can be represented by $n^k$ - for example $n^2$, $n^3$, etc.\footnote{In layman's terms, this means that finding a solution is infeasible as long as a large enough number is used.}\\ 
+\noindent Het algoritme van Shor, vernoemd naar de Amerikaanse wiskundige Peter Shor die het in 1994 formuleerde, is een kwantum algoritme \cite{shorarxiv} voor het ontbinden in priemfactoren.
+Dit was een belangrijke prestatie omdat deze problemen geen klassieke polynomiale tijdoplossing hebben.
+Dit betekent dat ze, op een klassieke computer, op geen enkele  hoeveelheid tijd kunnen worden opgelost. Dit kan weergegeven worden door $n^k$ - bijvoorveeld $n^2$, $n^3$, etc.\footnote{In lekentaal betekent dit dat het vinden van een oplossing niet haalbaar is zolang er een voldoende groot getal wordt gebruikt.}\\ 
 
-\noindent The Elliptic Curve Discrete Logarithm Problem \textit{(ECDLP)} is a special case of the \textit{DLP} for elliptic curves.
-This is a more difficult problem to solve classically than conventional cryptography relying on the \textit{DLP} alone.\cite{prooszalka} % Section 2.1.2
-This is the type of problem that needs to be solved in order to determine the private key from the public key for cryptocurrencies, such as Bitcoin and Nexus.\\
+\noindent Het Elliptic Curve Discrete Logarithm Problem \textit{(ECDLP)} is een speciaal onderdeel van \textit{DLP} voor elliptische curves.
+Dit is een moeilijker probleem om klassiek op te lossen dan conventionele cryptografie die alleen op de \textit{DLP} is gebaseerd.\cite{prooszalka} % Section 2.1.2
+Dit is het type probleem dat moet worden opgelost om de private key van de public key voor cryptocurrencies, zoals Bitcoin en Nexus, te bepalen.\\
 
-\subsection{Proos-Zalka Algorithm}
+\subsection{Algoritme van Proos-Zalka}
 
-The Proos-Zalka algorithm was specifically designed to solve the \textit{ECDLP} over a prime field $\mathbb{F}_p$ on a quantum computer.
-The qubit requirement for the breaking of the ECDLP over a prime field of $n$ bits is as follows \cite{prooszalka}
+Het algoritme van Proos-Zalka was specifiek ontworpen om de \textit{ECDLP} op te lossen over een priem veld $\mathbb{F}_p$ op een kwantumcomputer.
+De qubit vereiste voor het verbreken van de ECDLP over een priem veld van $n$ bits is als volgt \cite{prooszalka}
 
 \begin{equation}
 \resizebox{.5\hsize}{!}{$5\cdot n + 8 \sqrt{n} + 4 \log_{2} n + 10 \approx 6n$}
 \end{equation}
 
 \subsection{Kaye-Zalka Algorithm}
-The Kaye-Zalka revision addresses curves over the binary field $\mathbb{F}_{2^m}$. This specific field takes advantage of binary computation to bring quicker verification on larger keys. The equation modeling the qubits required to break a key of $\mathbb{F}_{2^m}$ is as follows \cite{kayezalka}.
+De Kaye-Zalka revisie behandelt curven over het binaire veld $\mathbb{F}_{2^m}$. Dit specifieke veld maakt gebruik van binaire berekening om snellere verificatie op grotere sleutels mogelijk te maken. De vergelijking die de qubits modelleert die nodig zijn om een sleutel van $\mathbb{F}_{2^m}$ te verbreken, gaat als volgt \cite{kayezalka}.
 
 \begin{equation}
 \resizebox{.5\hsize}{!}{$2 m + 7\cdot log m + 7 + H \approx 2m$}
 \end{equation}
 
-\noindent Where H is related to the halting counter and is of order $log(m)$.
+\noindent Waar H is gerelateerd aan de stop teller en volgorde van $log(m)$.
 
-\subsection{The Benefits of Larger Keys}
+\subsection{Het voordeel van langere sleutels}
 
-"Key length defines the upper-bound on an algorithm's security since the security of all algorithms can be violated by brute force attacks \cite{wikikeysize}." \\ 
+"De sleutellengte definieert de bovengrens van de beveiliging van een algoritme omdat de beveiliging van alle algoritmen kan worden geschonden door brute force aanvallen \cite{wikikeysize}." \\ 
 
-\noindent As of 2015, a minimum key length of 224 bits is recommended for elliptic curve algorithms \cite{bruteforce}.
-Bitcoin keys are $256-224 = 32$ bits longer than this requirement while Nexus keys are $571-224 = 347$ bits longer.
-\noindent According to the National Security Agency 
-``Elliptic Curve Public Key Cryptography using the 256-bit prime modulus elliptic curve as specified in FIPS-186-2 and SHA-256 are appropriate for protecting classified information up to the ``secret'' level. 
-Use of the 384-bit prime modulus elliptic curve and SHA-384 are necessary for the protection of ``top secret'' information \cite{nsa384}."
+\noindent Vanaf 2015 werd een minimale sleutellengte van 224 bits aanbevolen voor algoritmen voor elliptische curves \cite{bruteforce}.
+Bitcoin sleutels zijn $256-224 = 32$ bits langer dan deze vereiste, terwijl de Nexus sleutels $571-224 = 347$ bits langer zijn.
+\noindent Volgens de National Security Agency ``Elliptic Curve Public Key Cryptography met behulp van de 256-bit prime modulus elliptische curve zoals gespecificeerd in FIPS-186-2 en SHA-256 zijn geschikt voor het beschermen van geclassificeerde informatie tot het ``geheime'' niveau. 
+Gebruik van de 384-bits primaire modulus elliptische curve en SHA-384 zijn nodig voor de bescherming van ``topgeheime'' informatie \cite{nsa384}."
 
-\subsubsection*{Brute Force Resistance}
+\subsubsection*{Brute Force Resistent}
 
-The Large Bitcoin Collider \cite{largebitcoin} is a project that attempts to brute force-attack Bitcoin.
-Participants in this project generate as many Bitcoin public addresses as possible by first choosing a random number in a given range.
-Rarely do they find a public address that contains Bitcoin, but on chance one is discovered the Bitcoin contained in it can be stolen.\footnote{There are a couple of ways to mitigate the risk of such an attack on your Bitcoins. First, don't keep too many coins in one address. Second, use multisig.}\\
+De Large Bitcoin Collider \cite{largebitcoin} is een project dat Bitcoin door middel van brute force probeert aan te vallen. Deelnemers aan dit project genereren zoveel mogelijk openbare Bitcoin adressen door eerst een willekeurig getal in een bepaald bereik te kiezen. Ze vinden zelden een openbaar adres dat Bitcoin bevat, maar moest men bij toeval toch een adres vinden dan kunnen de aanwezige Bitcoins gestolen worden.\footnote{Er zijn een aantal manieren om het risico op een dergelijke aanval op uw Bitcoins te beperken. Bewaar eerst niet te veel munten in één adres. Ten tweede, gebruik multi-factor authenticatie.}\\
 
-\noindent Key length defines the upper-bound on an algorithm's security \cite{wikikeysize} against brute-force attacks.
-Nexus uses significantly larger 571-bit keys than Bitcoin's 256-bit keys and is thus postulated to be more resistant to these attacks.\\ 
+\noindent De sleutellengte definieert de bovengrens van de beveiliging van een algoritme \cite{wikikeysize} tegen aanvallen met brute force.
+Nexus gebruikt aanzienlijk grotere 571-bits sleutels dan de 256-bits sleutels van Bitcoin en wordt daarom verondersteld beter bestand te zijn tegen deze aanvallen.\\ 
 
-\noindent In any case, Rico - the pseudonymous lead of the LBC states: "Finding a P2PKH\footnote{Pay to Public Key Hash\cite{p2pkh}}-collision [one cryptographic method of creating Bitcoin addresses] would probably mean the end of P2PKH but not Bitcoin," ... "Bitcoin would evolve with new address types. Most certainly it wouldn't 'die' because of this."\cite{largebitcoin}
-This highlights one of the ways that Nexus is providing value back to the Bitcoin ecosystem.
-By using different elliptic curve parameters and different hashing algorithms, Nexus is paving the way for possible future enhancements to Bitcoin.
-Instead of merely researching or discussing alternatives, Nexus has been proving them on a live blockchain.
+\noindent In elk geval zegt Rico - de pseudonieme hoofdrol van de LBC: "Het vinden van een P2PKH\footnote{Betalen aan public key hash\cite{p2pkh}}-botsing [een cryptografische methode voor het maken van Bitcoin adressen] zou waarschijnlijk het einde betekenen van P2PKH maar niet van Bitcoin," ... "Bitcoin zou evolueren met een nieuw soort adressen. Zeer zeker zou het hierdoor niet 'sterven'."\cite{largebitcoin}
+Dit benadrukt een van de manieren waarop Nexus waarde teruggeeft aan het Bitcoin ecosysteem. Door verschillende elliptische curve parameters en verschillende hash algoritmen te gebruiken, maakt Nexus de weg voor mogelijke toekomstige uitbreidingen van Bitcoin. In plaats van alleen alternatieven te onderzoeken of te bespreken, heeft Nexus ze op een live blockchain getest.
 
-\subsubsection*{Longer Solution Time}
+\subsubsection*{Langere oplossingstijd (Longer Solution Time)}
 
-It will take more time for a quantum computer to solve the \textit{ECDLP} if the key is larger.
-The run times are predicted to be of order $O(n^2)$ to $O(n^3)$ \cite{prooszalka,kayezalka}.
-This means that a key which is twice as long will take approximately four times as long to find with a quantum computer.
+Het kost meer tijd voor een quantum computer om de \textit{ECDLP} op te lossen als de sleutel langer is.
+Er wordt voorspeld dat de looptijden in orde van $O(n^2)$ tot $O(n^3)$ \cite{prooszalka,kayezalka}.
+Dit betekent dat een sleutel die twee keer zo lang is ongeveer vier keer zo lang duurt om te vinden met een quantum computer.
 
 \begin{table}[ht]
-\caption{Qubits and Time required to break each key size for $\mathbb{F}_{p}$ \cite{quantumattacks}}
+\caption{Qubits en tijd die nodig is om elke sleutel voor $\mathbb{F}_{p}$ te verbreken \cite{quantumattacks}}
 \begin{center}
 \begin{tabular}{|c|c|c||c|c|c||c|}
     \hline
     \multicolumn{3}{|c||}{Quantum IFP} &
     \multicolumn{3}{c||}{Quantum ECDLP} &
-    Classical \\
+    Klassiek \\
     \hline
-    $\lambda$ & Qubits $\lambda$ & Time $4 \cdot \lambda ^ 3$ & $\lambda$ & Qubits $7 \cdot \lambda$ & Time $360 \cdot \lambda ^ 3$ & Time \\
+    $\lambda$ & Qubits $\lambda$ & Tijd $4 \cdot \lambda ^ 3$ & $\lambda$ & Qubits $7 \cdot \lambda$ & Tijd $360 \cdot \lambda ^ 3$ & Tijd \\
     \hline
     \hline
     512 & 1024 & $0.54 \cdot 10^9$ & 
@@ -844,92 +764,73 @@ This means that a key which is twice as long will take approximately four times 
     512   & 3584  & $50 \cdot 10^9$ & $c \cdot 10^{60}$ \\
     \hline
 \end{tabular}
-Where $\lambda$ is the input length in bits.
+Waar $\lambda$ de input lengte in bits is.
 \end{center}
 \end{table}
 
-\subsection{Side Channel Attacks on secp256k1}
+\subsection{Neven kanaal aanvallen op ecp256k1 (Side Channel Attacks)}
 
-As previously mentioned, Bitcoin uses the 256 bit \textit{secp256k1} elliptic curve domain parameters as defined in the Standards for Efficient Cryptography.
-Under special circumstances, a Bitcoin private key can be determined by another process on the same classical computer in as few as 200 signatures \cite{sigleak}.\footnote{This is called a "side channel" attack.}
-With quantum computing on the horizon, and the fact that ECC already leaks private keys classically with side channel attacks, serious considerations must be made on the logic of any use of digital signature algorithms to prove ownership of any tokens.
-This is the focus of ongoing research and development in Nexus.
+Zoals eerder vermeld, gebruikt Bitcoin de 256 bit \textit{secp256k1} elliptische curve domein parameters zoals gedefinieerd in de "Standards for Efficient Cryptography".
+Onder speciale omstandigheden kan een Bitcoin private key worden achterhaald door een ander proces op dezelfde klassieke computer met slechts 200 handtekeningen \cite{sigleak}.\footnote{Dit is wat men een neven kanaal (side channel) aanval noemt.}
+Met quantum computing achter de hoek, en het feit dat ECC reeds private keys lekt met neven kanaal aanvallen, moeten serieuze overwegingen worden gemaakt over de logica van elk gebruik van algoritmen voor digitale handtekeningen om eigendom van tokens te bewijzen. 
+Dit is de focus van voortdurend onderzoek en ontwikkeling van Nexus.
 
-\subsection{Key Accommodations in Nexus} 
 
-Nexus currently supports key sizes as large as 571 bits, specifically sect571r1.
-In order to offer more choice and to take advantage of the larger number of qubits required to crack curves over prime fields, we will also implement keys using different curves.\\
+\subsection{Sleutel Accommodaties in Nexus} 
 
-\noindent The choice of elliptic curve parameters is subtle; care must be taken to avoid security pitfalls.
-We plan to add support for multiple curves including post quantum solutions being developed at the current time.
-To mitigate against quantum attack, signature chains will be included as a part of the Tritium protocol taking advantage of \textit{PKH} and \textit{OTS} or one-time signatures, which happen to prevent side channel attacks and make quantum attacks exclusive to Grover's Algorithm.
-The projected time before quantum computers reach dangerous levels is the around five to ten years.
-By doubling Nexus key sizes, the required run time is quadrupled; this provides more time to carefully choose a post quantum cryptographic method. 
-This is projected to be within the next few years as the development of post-quantum cryptography is observed and studied more thoroughly.
+Nexus ondersteunt momenteel sleutelgroottes tot 571 bits, met name sect571r1. Om meer keuze te bieden en te profiteren van het grotere aantal qubits dat nodig is om de curves van de priem velden te kraken, zullen we ook sleutels met verschillende curven implementeren.\\
 
-\subsection{Post-Quantum Cryptography}
+\noindent De keuze van elliptische curve parameters is subtiel; we moeten zorgen dat beveiligingsrisico's worden voorkomen. We zijn van plan om ondersteuning voor meerdere curven toe te voegen, inclusief post-quantum oplossingen die op dit moment worden ontwikkeld. Om kwantum aanvallen tegen te gaan, zullen handtekening kettingen worden opgenomen als onderdeel van het Tritium protocol, waarbij gebruik wordt gemaakt van \textit{PKH} en \textit{OTS} of eenmalige handtekeningen, die neven kanaal aanvallen voorkomen en quantum aanvallen exclusief maken voor het algoritme van Grover. De geprojecteerde tijd voordat quantum computers gevaarlijke niveaus bereiken, is ongeveer vijf tot tien jaar. Door de sleutel formaten van de Nexus te verdubbelen, wordt de vereiste doorlooptijd verviervoudigd, dit biedt meer tijd om zorgvuldig een post kwantum cryptografische methode te kiezen. Naar verwachting zal dit in de komende jaren plaatsvinden, aangezien de ontwikkeling van post-quantumcryptografie wordt bekeken en grondig bestudeerd.
 
-There are many promising solutions to the post-quantum conundrum that we are facing in the coming years. 
-One of which holds promise is lattice based cryptography which ensures that quantum attack, at least for now, is infeasible. 
-Another viable solution to such attacks is using hash based signatures such as \textit{XMSS} which does hold certain characteristics of post-quantum solutions, but it does carry a heavy drawback of requiring very large amounts of data to be transfered in order to protect the private key from being leaked. 
-This is not desirable when selecting a DSA \textit{Digital Signature Algorithm} for a blockchain, as there are already very high data overheads that haven't been addressed in scaling solutions.
-NIST just opened a new competition for Post-Quantum standardization similar to the SHA3 competition that should be finalized in the next few years to give us a better selection of post quantum algorithms. \cite{NIST_POST_QUANTUM} 
 
-\section{Conclusion}
+\subsection{Post-quantum cryptografie}
 
-With modern hashing, upgraded private keys, multiple block validation methods, decentralized checkpoints, time synchronization, decentralized trust, variable block reward, time locked emission, decentralized minting, lower level library, quantum considerations, ground based mesh networks, and low earth orbit satellite constellation; Nexus is one of the most technologically advanced frameworks on the planet. 
-We now have an opportunity to step away from existing systems by simply changing our focus. 
-We can choose to look away from the systems of the past and focus our thoughts on the systems of the future. 
-Nexus exists as a publicly available, free-to-use, peer-to-peer network for people to connect and improve the quality of their lives.  
-Peer-to-Peer technologies have the capability to help us reshape our world and Nexus represents an important step forward in this process. 
-The noun ``nexus'' is defined as: a connection or series of connections linking two or more things. 
-Nexus is an idea of connection and the technology to make this possible.
-It is through this connection that we can create a future filled with life, liberty and the pursuit of happiness.
-Welcome to Nexus.
+Er zijn verschillende veelbelovende oplossingen voor het post-quantum raadsel waar we de komende jaren voor staan. E\'en daarvan is veelbelovend: op rasters gebaseerde cryptografie die ervoor zorgt dat kwantum aanvallen, althans voorlopig, onhaalbaar zijn.
+Een andere haalbare oplossing voor dergelijke aanvallen is het gebruik van een op hash gebaseerde handtekeningen zoals \textit{XMSS},  die wel bepaalde kenmerken van post-quantum oplossingen bezit, maar het heeft een groot nadeel dat er zeer grote hoeveelheden gegevens moeten worden overgedragen om de private key te beschermen.
+Dit is niet wenselijk bij het selecteren van een DSA \textit{Digital Signature Algorithm} voor een blockchain, omdat er al zeer hoge data overhead is waarop de schaalbaarheid niet voorzien is.
+NIST heeft zojuist een nieuwe competitie geopend voor Post-Quantum standaardisatie, deze is vergelijkbaar met de SHA3-competitie. We verwachten dat deze de komende jaren zal afgerond worden en ons van een ruimer aanbod van post-quantumalgoritmen  geeft. \cite{NIST_POST_QUANTUM} 
+
+\section{Besluit}
+
+Met moderne hashing, geüpgradede private keys, meerdere blok validatiemethoden, gedecentraliseerde controlepunten, tijdsynchronisatie, gedecentraliseerd vertrouwen, variabele blok beloning, tijdslot uitgave, gedecentraliseerde intrest, databank op laag niveau, kwantum overwegingen, op de grond gebaseerde mesh-netwerken en satelliet constellatie in lage baan om de aarde. Nexus is een van de technologisch meest geavanceerde frameworks op aarde. We hebben nu de mogelijkheid om afstand te nemen van bestaande systemen door simpelweg onze focus te veranderen. We kunnen ervoor kiezen weg te kijken van de systemen van het verleden en onze gedachten te richten op de systemen van de toekomst. Nexus bestaat als een publiek beschikbaar, gratis te gebruiken, peer-to-peer netwerk waarmee mensen verbinding kunnen maken en de kwaliteit van hun leven kunnen verbeteren. Peer-to-Peer technologieën kunnen ons helpen onze wereld opnieuw vorm te geven en Nexus betekent een belangrijke stap voorwaarts in dit proces. Het zelfstandig naamwoord ``nexus'' wordt gedefinieerd als: een verbinding of reeks verbindingen die twee of meer dingen met elkaar verbindt. Nexus is een idee van verbinding en de technologie om dit mogelijk te maken. Het is door deze verbinding dat we een toekomst kunnen creëren vol met leven, vrijheid en het nastreven van geluk. Welkom bij Nexus.
 \pagebreak
 
 \appendix
 
-\section{Appendix: Reference Summaries to Reinforce Content}
+\section{Appendix: Referentie Samenvattingen om inhoud te versterken}
 
-This appendix is designed to be seen ``as an extension to the core content'' as references to the ideas described herein.
-With the understanding and study of the following sections, one can gain a higher level perspective of what needs to be understood for us to progress as a species.
-As we can see, societal organization models, ancient philosophies that have stood the test of time, and preliminary principles designed to be references to greater understanding of truth are described below.
+Deze bijlage is ontworpen om gezien te worden als "een uitbreiding op de kerninhoud" als verwijzingen naar de beschreven ideeën. Met het begrip en de studie van de volgende paragrafen, kan men een hoger niveau van perspectief krijgen van wat moet worden begrepen om ons als een soort te ontwikkelen. Zoals we kunnen zien, worden hieronder de maatschappelijke organisatiemodellen, oude filosofieën die de tand des tijds hebben doorstaan ​​en voorlopige principes ontworpen om verwijzingen naar een groter begrip van de waarheid te zijn.
 
-\epigraph{Action without Vision is a Daydream, Vision without Action is a Nightmare.}
+\epigraph{Actie zonder visie is een dagdroom, visie zonder actie is een nachtmerrie.}
 
-\section{Vision}
+\section{Visie}
 
-Vision is one's ability to think about or plan the future with wisdom.
-Wisdom is the quality of having experience, knowledge, and good judgment. 
-In this case, vision is coupled with wisdom, which is a direct result of experience and, therefore, knowledge. 
-This means that vision is attainable if one is willing to learn from the experience of the world.
-Vision can be understood at a greater depth by applying the following to conduct:
+Visie is iemands vermogen om met wijsheid over de toekomst na te denken of de toekomst te plannen. Wijsheid is de eigenschap van ervaring, kennis en gezond verstand. In dit geval gaat visie gepaard met wijsheid, die een direct gevolg is van ervaring en dus van kennis. Dit betekent dat visie haalbaar is als men bereid is te leren van de ervaring van de wereld. Visie kan op een grotere diepte worden begrepen door het volgende toe te passen:
 \begin{enumerate}
-\item \textbf{Capable} of verifying and/or understanding without premature conclusion
-\item \textbf{Discipline} to see \textit{what is} - unaltered by definitions and belief systems
-\item \textbf{Knowledge} gained through the study of reality, society, and the work of others
-\item \textbf{Accordance} with the laws of nature, virtue in accordance with the laws of the self
-\item \textbf{Principle} formed through the understanding of this accordance
+\item \textbf{Capabel} zijn om te verifiëren en / of te begrijpen zonder voorbarige conclusies te trekken
+\item \textbf{Discipline} om te zien wat niet wordt gewijzigd door definities en geloof
+\item \textbf{Kennis} die is opgedaan door de studie van de werkelijkheid, de maatschappij en het werk van anderen
+\item \textbf{Overeenstemming} met de wetten van de natuur, deugd vinden in de wetten van jezelf
+\item \textbf{Principe} gevormd door het begrip van deze overeenstemming
 \end{enumerate}
 
-\section{Philosophy}
+\section{Filosofie}
 
-Philosophy is the study of the fundamental nature of knowledge, reality, and existence - \textit{as it is} - with intent to understand \textit{what it is}. 
-Following will include a short list of philosophies forming a foundation for vision and principle to integrate into greater virtue, reason, and success in the form of happiness being the ultimate value in which each individual seeks.
+Filosofie is de studie van de fundamentele aard van kennis, werkelijkheid en bestaan - \textit{zoals het is} - met de bedoeling om te begrijpen \textit{wat het is}. 
+Hierna volgt een korte lijst van filosofie\"en die een fundament vormen voor visie en principe om te integreren in grotere deugd, reden en succes in de vorm van geluk zijnde de ultieme waarde waarnaar elk individu op zoek is.
 
 \begin{center}
 \textit{
-I must not fear.\linebreak
-Fear is the mind-killer.\linebreak
-Fear is the little-death that brings total obliteration.\linebreak
-I will face my fear.\linebreak
-I will permit it to pass over me and through me.\linebreak
-And when it has gone past I will turn the inner eye to see its path.\linebreak
-Where the fear has gone there will be nothing. \linebreak
-Only I will remain.\linebreak
+Ik moet niet bang zijn.\linebreak
+Angst is de moordenaar.\linebreak
+Angst is de kleine dood die totale vernietiging brengt.\linebreak
+Ik zal mijn angst onder ogen zien.\linebreak
+Ik zal toestaan ​​dat het over en door mij heen passeert.\linebreak
+En als hij voorbij is, zal ik me omdraaien om zijn pad te zien.\linebreak
+Waar de angst is geweest zal er niets zijn. \linebreak
+Alleen zal ik blijven.\linebreak
 }
-\footnote{Bene Gesserit Litany Against Fear - From Frank Herbert's Dune Book Series}
+\footnote{Bene Gesserit Litany Against Fear - Van Frank Herbert’s Dune Boeken serie}
 \end{center}
 
 \begin{wrapfigure}[17]{r}{0.44\textwidth}
@@ -937,13 +838,11 @@ Only I will remain.\linebreak
     \includegraphics[width=0.44\textwidth]{aristotle.jpg}
 \end{wrapfigure}
 
-\subsection{Nicomachean Ethics}
+\subsection{Ethica Nicomachea}
 
-Aristotle was an ancient Greek philosopher and scientist \cite{aristotle}. 
-Aristotle believed that virtue was essential in achieving the ultimate goal: happiness.\\ 
-\noindent As a portion of the philosophies described in his works on Nicomachean Ethics, an idea was formed under the name the \textit{"golden mean"} which described a world of excess and deficiency.
-This philosophy described the evils of the world - or oppositions to the growth of life - to be either excess or deficiency. 
-The golden mean is described as the quality of having neither excess or deficiency but rather a "golden mean" between the two extremes. 
+Aristoteles was een oude Griekse filosoof en wetenschapper \cite{aristotle}. 
+Aristoteles geloofde dat deugd essentieel was om het uiteindelijke doel te bereiken: geluk.\\ 
+\noindent Als een deel van de filosofieën beschreven in zijn werken over Ethica Nicomachea, werd een idee gevormd onder de naam \textit{"golden mean"}, die een wereld van overmaat en tekort beschreef. Deze filosofie beschreef de kwaden van de wereld - of opposities tegen de groei van het leven - als een overmaat of een tekort. De gulden middenweg wordt omschreven als de eigenschap om geen overmaat of tekort te hebben, maar eerder een 'gulden middenweg' tussen de twee uitersten.
 
 \pagebreak
 \subsection{Kingdom of Ends}
@@ -953,91 +852,73 @@ The golden mean is described as the quality of having neither excess or deficien
     \includegraphics[width=0.44\textwidth]{kant.jpg}
 \end{wrapfigure}
 
-Immanuel Kant was born ahead of his time on the 22nd of April, 1724 in Berlin, Germany \cite{kant}. He had many philosophies that are still studied to this day. 
-One of his more notable works was called the \textit{Kingdom of Ends}. 
-He describes a hypothetical existence where individuals act entirely rationally, and with reason.
-He defines these people as ones capable of proper conduct. 
-He proposed that when those that were capable were able to live under a common law of laws that were of the utmost importance and necessity, that a more harmonious and \textit{moral} society could form as a \textit{Kingdom of Ends}.\\
+Immanuel Kant werd geboren voor zijn tijd op 22 april 1724 in Berlijn, Duitsland \cite{kant}. Hij had vele filosofieën die nog steeds worden bestudeerd tot op de dag van vandaag. Een van zijn meer opmerkelijke werken werd het \textit{Kingdom of Ends}. 
+enoemd. Hij beschrijft een hypothetisch bestaan ​​waarin individuen volledig rationeel handelen, en met reden. Hij definieert deze mensen als degenen die in staat zijn tot correct gedrag. Hij stelde voor dat als degenen die in staat waren om te leven onder een gemeenschappelijke wet van wetten die van het grootste belang en de noodzaak waren, dat een meer harmonieuze en \textit{morele} samenleving zich zou kunnen vormen als een \textit{Kingdom of Ends}.\\
 
-\noindent These common laws could be considered reference points for the value of actions in a Kingdom of Ends, to where its correlation with universal law provides the greatest value to those of the Kingdom of Ends.
-His second formulation showed that individuals that live in accordance with the principle to treat ones fellowmen as end in themselves, were capable of greater virtue, and therefore, joy.
-This describes an idea and philosophy of acting in accordance and harmony with one's people as a kingdom of ends, rather than each individual seeking one another as means to their own ends.
+\noindent Deze gemeenschappelijke wetten kunnen worden beschouwd als referentiepunten voor de waarde van acties in een Kingdom of Ends, waar de correlatie met universele wetgeving de grootste waarde heeft voor die van Kingdom of Ends. Zijn tweede formulering toonde aan dat individuen die in overeenstemming met het principe leven om medemensen als een doel op zichzelf te behandelen, in staat waren tot grotere deugd, en daarom, vreugde. Dit beschrijft een idee en een filosofie van handelen in overeenstemming en harmonie mensen als een koninkrijk van doelen, in plaats van dat elk individu op zoek is naar elkaar als middel voor hun eigen doeleinden.
 
 \bigskip
-\textit{"People can only belong to the Kingdom of Ends when they become subject to these universal laws. 
-Such rational beings must regard themselves simultaneously as sovereign when making laws, and as subject when obeying them. 
-Morality, therefore, is acting out of reverence for all universal laws which make the Kingdom of Ends possible. 
-In a true Kingdom of Ends, acting virtuously will be rewarded with happiness."} \footnote{Excerpt quoted from \url{https://en.wikipedia.org/wiki/Kingdom_of_Ends}}
+\textit{"People can only belong to the Kingdom of Ends when they become subject to these universal laws. Such rational beings must regard themselves simultaneously as sovereign when making laws, and as subject when obeying them. Morality,  therefore, is acting out of reverence for all universal laws which make the Kingdom of Ends  possible. In a true Kingdom of Ends, acting virtuously will be rewarded with happiness."} \footnote{Overgenomen van \url{https://en.wikipedia.org/wiki/Kingdom_of_Ends}}
 
 \subsection{The Tao}
 
-In ancient China, the keeper of the Imperial Library, Lao Tzu, was famous for his wisdom. Perceiving the growing corruption of the government, he left for the countryside. On his way, the guard at the city gates asked Lao Tzu to write out the essence of his understanding to benefit future generations. Lao Tzu wrote the Tao Te Ching, left, and was never heard of again \cite{tao_introduction}.
+In het oude China was de bewaarder van de Imperiale Bibliotheek, Lao Tzu, beroemd om zijn wijsheid. Toen hij de toenemende corruptie van de regering zag, vertrok hij naar het platteland. Onderweg vroeg de bewaker bij de stadspoorten Lao Tzuto om de essentie van zijn begrip uit te schrijven om toekomstige generaties ten goede te komen. Lao Tzu schreef de Tao Te Ching, vertrok, en er werd nooit meer iets van hem gehoord \cite{tao_introduction}.
 
 \medskip
 \begin{center}
-\textbf{\cite{tao_chapter1} Chapter 1 of the Tao Te Ching:}
+\textbf{\cite{tao_chapter1} Hoofdstuk 1 van de Tao Te Ching:}
 \end{center}
 
-\begin{wrapfigure}[20]{r}{0.33\textwidth}
+\begin{wrapfigure}[20]{r}{0.25\textwidth}
     \centering
-    \vspace{-49pt}
+    \vspace{-45pt}
     \includegraphics[width=0.30\textwidth]{tao.png}
 \end{wrapfigure}
 
 \noindent
 \vspace{-10pt}
 \begin{flushright}
-The "Tao" is too great to be described by the name "Tao".
-If it could be named so simply, it would not be the eternal Tao.\vspace{10pt}\linebreak
-Heaven and Earth began from the nameless (Tao),
-but the multitudes of things around us were created by names.\vspace{10pt}\linebreak
-We desire to understand the world by giving names to the things we see, but these things are only the effects of something subtle.\vspace{10pt}\linebreak
-When we see beyond the desire to use names, we can sense the nameless cause of these effects. \vspace{10pt}\linebreak
-The cause and the effects are aspects of the same, one thing.
-They are both mysterious and profound.\vspace{20pt}\linebreak
-At their most mysterious and profound point lies the \textit{"Gate of the Great Truth"}.
+De "Tao" is te groot om te worden beschreven door de naam "Tao". Als het zo eenvoudig genoemd zou kunnen worden, zou het niet de eeuwige Tao zijn.\vspace{10pt}\linebreak
+Hemel en Aarde begonnen met de naamloze (Tao), maar de massa's 
+dingen om ons heen werden met namen gemaakt.\vspace{10pt}\linebreak
+We willen de wereld begrijpen door namen te geven aan de dingen die we zien, maar deze dingen zijn slechts de effecten van iets subtiels.\vspace{10pt}\linebreak
+Wanneer we verder kijken dan de wens om namen te gebruiken, kunnen we de naamloze oorzaak van deze effecten voelen. \vspace{10pt}\linebreak
+De oorzaak en de effecten zijn aspecten van hetzelfde, één ding. Ze zijn zowel mysterieus als diepzinnig.\vspace{20pt}\linebreak
+Op hun meest mysterieuze en diepzinnige punt ligt de \textit{"Poort van de Grote Waarheid"}.
 \end{flushright}
 
-\epigraph{People must have righteous principles in the first, and then they will not fail to perform virtuous actions.}{\textit{\footnotesize{Martin Luther}}}
+\epigraph{Mensen moeten in de eerste rechtvaardige principes hebben en dan zullen ze niet nalaten om deugdzame daden te verrichten.}{\textit{\footnotesize{Martin Luther}}}
 
-\section{Principles}
+\section{Principes}
 
-Principles are the extensions of philosophies that derive frameworks of thought and act as guidelines of proper conduct between ourselves and others.
+Principes zijn de verlengstukken van filosofieën die gedachten raamwerken opzetten en fungeren als richtlijnen voor goed gedrag tussen onszelf en anderen.
 
-\subsection{Individual}
-
-\begin{enumerate}
-\item \textbf{Evaluate} as a means to greater \textbf{Knowledge}
-\item \textbf{Happiness} as a result of \textbf{Virtue}
-\item \textbf{Respect} as a result of \textbf{Depth}
-\item \textbf{Freedom} as the truest \textbf{Expression}
-\end{enumerate}
-
-\subsection{Collective}
+\subsection{Individueel}
 
 \begin{enumerate}
-\item \textbf{Objective} with Receptivity, \textbf{Honest} with Communication
-\item \textbf{Respectful} in Conduct, \textbf{Understanding} in Conflict
-\item \textbf{Honor} to spoken Word, \textbf{Harmony} to Action
+\item \textbf{Evalueer} als een middel tot grotere \textbf{kennis}
+\item \textbf{Geluk} als gevolg van \textbf{deugd}
+\item \textbf{Respect} als resultaat van \textbf{diepgang}
+\item \textbf{Vrijheid} als de meest ware \textbf{uitdrukking}
 \end{enumerate}
 
-\section{How We Make Change}
+\subsection{Collectief}
 
-The cells of our body work together to provide the capacity for life. Similarly, we can compare the cells of our planet to each individual. 
-If we understand the benefits of cooperation, challenges can be resolved thoroughly and quickly without unnecessary difficulties.
-This is how we make change; we work together to resolve challenges with viable solutions.
-This is the most efficient and effective way to bring change in the direction of our greatest preferences.\\
+\begin{enumerate}
+\item \textbf{Doel} met ontvankelijkheid, \textbf{Eerlijk} in Communicatie
+\item \textbf{Respectvol} in gedrag, \textbf{Begrip} in Conflict
+\item \textbf{Eer} aan een gesproken Woord, \textbf{Harmonie} met Actie
+\end{enumerate}
 
-\noindent The community is the very foundation of an economy. An economy is only as strong as its foundation. 
-When people loose faith in an economy, the base of the economy will collapse and the value of its system will fall with it. 
-The Nexus community is already very resilient to the stress of markets. The community is a positive and inclusive group of people from across the world who are all aiming towards the same goals of transparency, prosperity, and freedom.\\ 
+\section{Hoe we verandering maken}
 
-\noindent Nexus aims to build a strong community based on a savings culture and charity. 
-The savings culture has been long lost but it is the best insurance policy for any uncertain times that may lie ahead. 
-This helps the community hedge itself against high risk and volatile markets.
-The idea is that your community member is your neighbor. If your neighbor does well, your local economy will prosper as well. 
+De cellen van ons lichaam werken samen om de capaciteit voor het leven te bieden. Op dezelfde manier kunnen we de cellen van onze planeet met elk individu vergelijken. Als we de voordelen van samenwerking begrijpen, kunnen uitdagingen grondig en snel worden opgelost zonder onnodige problemen. Dit is hoe we verandering maken; samenwerken om haalbare oplossingen te bieden voor uitdagingen. Dit is de meest efficiënte en effectieve manier om verandering in de richting van onze voorkeuren te sturen.\\
 
-\section{List of Contributors}
+\noindent De gemeenschap is de basis van een economie. Een economie is alleen zo sterk als de basis. Wanneer mensen het vertrouwen in een economie verliezen, zal de basis van de economie instorten en zal de waarde van het systeem dalen. De Nexus community is reeds erg veerkrachtig tegen de stress van de markten. De community is een positieve aaneenhang van een groep mensen over de hele wereld die allemaal streven naar dezelfde doelen als transparantie, welvaart en vrijheid.\\ 
+
+\noindent Nexus wil een sterke community opbouwen op basis van een spaarcultuur en liefdadigheid. De spaarcultuur is al lang verloren gegaan, maar het is het beste verzekeringsbeleid voor onzekere tijden die mogelijk in het verschiet liggen. Dit helpt de gemeenschap zich af te dekken tegen risicovolle en volatiele markten. Het idee is dat je communitylid je buurman is. Als je buurman het goed doet, zal je lokale economie ook gedijen. 
+
+\section{Lijst met bijdragers}
 
 \begingroup
 \parindent 0pt
@@ -1066,6 +947,9 @@ The idea is that your community member is your neighbor. If your neighbor does w
 \printcontributor{Mara}
 
 \item
+\printcontributor{gBogaerts}
+
+\item
 \printcontributor{Nexus}
 \end{enumerate}
 
@@ -1078,7 +962,7 @@ The idea is that your community member is your neighbor. If your neighbor does w
 Bitcoin: A Peer-to-Peer Electronic Cash System \url{https://bitcoin.org/bitcoin.pdf}
 
 \bibitem{hyperinflation}
-What are some historic examples of hyperinflation? Investopedia.
+Wat zijn enkele historische voorbeelden van hyperinflatie? Investopedia.
 \url{http://www.investopedia.com/ask/answers/061515/what-are-some-historic-examples-hyperinflation.asp}
 
 \bibitem{cbc}
