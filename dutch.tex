@@ -499,11 +499,11 @@ Vertrouwen of Trust is een kern component van Nexus. Knooppunten (of zoals hierb
 Gewicht bepaalt de snelheid waarmee kan worden gezocht naar nieuwe vertrouwens blokken. Het komt in de vorm van twee verschillende gewichts variabelen: Blok gewicht ($W_b$) en Vertrouwen gewicht ($W_t$).
 
 \begin{equation}
-W_{t} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200}) + 1}{ln(3)} + 1.0)
+W_{t} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200} + 1)}{ln(3)} + 1.0)
 \end{equation}
 
 \begin{equation}
-W_{b} = Min(20.0,\frac{19.0 \cdot ln(\frac{2 \cdot a_b}{86400}) + 1}{ln(3)} + 0.05)
+W_{b} = Min(20.0,\frac{19.0 \cdot ln(\frac{2 \cdot a_b}{86400} + 1)}{ln(3)} + 1.0)
 \end{equation}
 
 \noindent Waar $a_t$ de vertrouwens leeftijd is en $a_b$ de leeftijd van de block.

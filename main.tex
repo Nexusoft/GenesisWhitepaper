@@ -557,11 +557,11 @@ Weight governs the speed in which one can search for new trust blocks.
 It comes in the form of two different weight variables: Block Weight ($W_b$) and Trust Weight ($W_t$).
 
 \begin{equation}
-W_{t} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200}) + 1}{ln(3)} + 1.0)
+W_{t} = Min(17.5, \frac{16.5 \cdot ln(\frac{2 \cdot a_t}{2419200} + 1)}{ln(3)} + 1.0)
 \end{equation}
 
 \begin{equation}
-W_{b} = Min(20.0,\frac{19.0 \cdot ln(\frac{2 \cdot a_b}{86400}) + 1}{ln(3)} + 0.05)
+W_{b} = Min(20.0,\frac{19.0 \cdot ln(\frac{2 \cdot a_b}{86400} + 1)}{ln(3)} + 1.0)
 \end{equation}
 
 \noindent Where $a_t$ is the trust age and $a_b$ is the block age.
